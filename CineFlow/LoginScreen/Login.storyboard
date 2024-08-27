@@ -109,6 +109,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="gvh-EM-8iW" id="R2c-tS-uSg"/>
+                        <outlet property="enterButton" destination="kTA-YG-eUp" id="0BZ-Jn-H8W"/>
                         <outlet property="passwordTextField" destination="8iS-3o-FAF" id="zVb-dn-owO"/>
                         <outlet property="registerLabel" destination="Os7-00-1Z0" id="uNQ-2W-8SK"/>
                     </connections>
