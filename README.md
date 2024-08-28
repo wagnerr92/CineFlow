@@ -13,7 +13,7 @@ CineFlow é um aplicativo iOS desenvolvido para permitir aos usuários criar, ge
 ## Tecnologias Utilizadas
 
 - **Linguagem**: Swift
-- **Framework**: SwiftUI
+- **Framework**: Storyboard
 - **API**: The Movie DB API
 - **Controle de Versão**: Git
 
