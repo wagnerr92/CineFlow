@@ -20,8 +20,8 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .black
         registerLabel.textColor = .white
         
-        configureTextField(emailTextField, placeholder: "Digite o seu e-mail")
-        configureTextField(passwordTextField, placeholder: "Digite a sua senha")
+        configureTextField(emailTextField, placeholder: "Digite o seu e-mail", imageName: "emailIcon")
+        configureTextField(passwordTextField, placeholder: "Digite a sua senha", imageName: "passwordIcon" )
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         enterButton.isEnabled = false
     }
     
-    private func configureTextField(_ textField: UITextField, placeholder: String) {
+    private func configureTextField(_ textField: UITextField, placeholder: String, imageName: String) {
         textField.backgroundColor = .darkGray
         textField.layer.cornerRadius = 8.0
         textField.layer.borderColor = UIColor.black.cgColor
@@ -37,7 +37,30 @@ class LoginViewController: UIViewController {
         textField.clipsToBounds = true
         textField.placeholder = placeholder
         textField.textColor = .white
+        
+        if let image = UIImage(named: imageName) {
+            let imageView = UIImageView(image: image)
+            imageView.contentMode = .scaleAspectFit
+            
+            // Definir o tamanho do ícone
+            let iconSize: CGFloat = 15 // Ajuste o tamanho desejado do ícone
+            let padding: CGFloat = 8
+            let containerWidth = iconSize + padding * 2
+            let containerHeight = textField.frame.height
+            
+            // Criar uma UIView para conter a imagem e adicionar margem
+            let containerView = UIView(frame: CGRect(x: 0, y: 0, width: containerWidth, height: containerHeight))
+            
+            // Posicionar a imagem dentro da containerView com padding
+            imageView.frame = CGRect(x: padding, y: (containerHeight - iconSize) / 2, width: iconSize, height: iconSize)
+            containerView.addSubview(imageView)
+            
+            // Configura a visualização da imagem à esquerda
+            textField.leftView = containerView
+            textField.leftViewMode = .always
+        }
     }
+    
     
     private func updateEnterButtonState() {
         let isEmailFilled = emailTextField.hasText
