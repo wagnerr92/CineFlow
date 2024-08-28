@@ -13,31 +13,15 @@ CineFlow é um aplicativo iOS desenvolvido para permitir aos usuários criar, ge
 ## Tecnologias Utilizadas
 
 - **Linguagem**: Swift
-- **Framework**: Storyboard
+- **Framework**: SwiftUI
 - **API**: The Movie DB API
 - **Controle de Versão**: Git
 
-## Capturas de Tela
+## Captura de Tela
 
-### Tela Inicial
+Aqui está uma visão geral do aplicativo:
 
-![Tela Inicial](https://via.placeholder.com/400x800?text=Tela+Inicial)
-
-### Tela de Perfil
-
-![Tela de Perfil](https://via.placeholder.com/400x800?text=Tela+de+Perfil)
-
-### Tela de Listas
-
-![Tela de Listas](https://via.placeholder.com/400x800?text=Tela+de+Listas)
-
-### Tela de Pesquisa de Filmes e Séries
-
-![Tela de Pesquisa](https://via.placeholder.com/400x800?text=Tela+de+Pesquisa+de+Filmes+e+Séries)
-
-### Tela de Pesquisa por Categorias
-
-![Tela de Categorias](https://via.placeholder.com/400x800?text=Tela+de+Pesquisa+por+Categorias)
+![Exemplo de App de Filmes](https://static.appgeek.com.br/imagens/tv-time.jpg)
 
 ## Uso
 
