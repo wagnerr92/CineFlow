@@ -34,6 +34,10 @@ extension AddListViewController {
             saveButton.isEnabled = true
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
 
 extension AddListViewController: UITextFieldDelegate {

@@ -34,7 +34,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="dfsdfs" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VTK-0X-0gw">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VTK-0X-0gw">
                                 <rect key="frame" x="20" y="236" width="388" height="119"/>
                                 <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -45,7 +45,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyu-2T-56D">
-                                <rect key="frame" x="20" y="837.66666666666663" width="388" height="34.333333333333371"/>
+                                <rect key="frame" x="20" y="817.66666666666663" width="388" height="34.333333333333371"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.035294117649999998" blue="0.078431372550000003" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -70,7 +70,7 @@
                             <constraint firstItem="bMJ-iq-23a" firstAttribute="leading" secondItem="PT6-vL-wFx" secondAttribute="leading" constant="20" id="e9P-r9-Ldq"/>
                             <constraint firstItem="1IM-LZ-RYc" firstAttribute="leading" secondItem="PT6-vL-wFx" secondAttribute="leading" constant="20" id="fLu-6U-3Q4"/>
                             <constraint firstItem="bMJ-iq-23a" firstAttribute="top" secondItem="1IM-LZ-RYc" secondAttribute="bottom" constant="1" id="gJf-7f-Y0a"/>
-                            <constraint firstItem="PT6-vL-wFx" firstAttribute="bottom" secondItem="tyu-2T-56D" secondAttribute="bottom" constant="20" id="hbf-gT-ElC"/>
+                            <constraint firstItem="PT6-vL-wFx" firstAttribute="bottom" secondItem="tyu-2T-56D" secondAttribute="bottom" constant="40" id="hbf-gT-ElC"/>
                             <constraint firstItem="1IM-LZ-RYc" firstAttribute="top" secondItem="PT6-vL-wFx" secondAttribute="top" constant="40" id="meV-s2-Fou"/>
                             <constraint firstItem="PT6-vL-wFx" firstAttribute="trailing" secondItem="bMJ-iq-23a" secondAttribute="trailing" constant="20" id="nJJ-e6-8yq"/>
                             <constraint firstItem="VTK-0X-0gw" firstAttribute="leading" secondItem="PT6-vL-wFx" secondAttribute="leading" constant="20" id="s5c-qb-aQm"/>

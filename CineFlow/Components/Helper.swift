@@ -10,5 +10,5 @@ import Foundation
 final class Helper {
     static var shared = Helper()
     
-    var nameListed: [String] = ["Teste","aaaaa","vccvcv","Teste","aaaaa","vccvcv"]
+    var nameListed: [String] = ["Lista 1"]
 }
