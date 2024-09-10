@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VhN-mP-OSI">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Criar Lista-->
+        <scene sceneID="YQL-L3-aRw">
+            <objects>
+                <viewController storyboardIdentifier="AddListViewController" hidesBottomBarWhenPushed="YES" id="VhN-mP-OSI" customClass="AddListViewController" customModule="CineFlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8Pd-Jo-HRh">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Vamos criar uma lista" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IM-LZ-RYc">
+                                <rect key="frame" x="20" y="87" width="388" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor insira um nome e uma descrição." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMJ-iq-23a">
+                                <rect key="frame" x="20" y="105" width="388" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o nome da lista" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PLS-JE-MOH">
+                                <rect key="frame" x="20" y="182" width="388" height="34"/>
+                                <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VTK-0X-0gw">
+                                <rect key="frame" x="20" y="236" width="388" height="119"/>
+                                <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="119" id="ZZk-Cu-htl"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyu-2T-56D">
+                                <rect key="frame" x="20" y="817.66666666666663" width="388" height="34.333333333333371"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.035294117649999998" blue="0.078431372550000003" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Salvar"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Salvar">
+                                    <color key="baseBackgroundColor" red="0.8980392157" green="0.035294117649999998" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="SaveList:" destination="VhN-mP-OSI" eventType="touchUpInside" id="w2f-qs-fW9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PT6-vL-wFx"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PT6-vL-wFx" firstAttribute="trailing" secondItem="tyu-2T-56D" secondAttribute="trailing" constant="20" id="AgI-yu-ofi"/>
+                            <constraint firstItem="PT6-vL-wFx" firstAttribute="trailing" secondItem="PLS-JE-MOH" secondAttribute="trailing" constant="20" id="Fmg-Ma-x2p"/>
+                            <constraint firstItem="PT6-vL-wFx" firstAttribute="trailing" secondItem="1IM-LZ-RYc" secondAttribute="trailing" constant="20" id="Hg4-Yx-VcB"/>
+                            <constraint firstItem="PLS-JE-MOH" firstAttribute="top" secondItem="bMJ-iq-23a" secondAttribute="bottom" constant="60" id="Nyb-X6-R4F"/>
+                            <constraint firstItem="PLS-JE-MOH" firstAttribute="leading" secondItem="PT6-vL-wFx" secondAttribute="leading" constant="20" id="aM8-FB-fSb"/>
+                            <constraint firstItem="VTK-0X-0gw" firstAttribute="top" secondItem="PLS-JE-MOH" secondAttribute="bottom" constant="20" id="dRb-Op-Z37"/>
+                            <constraint firstItem="bMJ-iq-23a" firstAttribute="leading" secondItem="PT6-vL-wFx" secondAttribute="leading" constant="20" id="e9P-r9-Ldq"/>
+                            <constraint firstItem="1IM-LZ-RYc" firstAttribute="leading" secondItem="PT6-vL-wFx" secondAttribute="leading" constant="20" id="fLu-6U-3Q4"/>
+                            <constraint firstItem="bMJ-iq-23a" firstAttribute="top" secondItem="1IM-LZ-RYc" secondAttribute="bottom" constant="1" id="gJf-7f-Y0a"/>
+                            <constraint firstItem="PT6-vL-wFx" firstAttribute="bottom" secondItem="tyu-2T-56D" secondAttribute="bottom" constant="40" id="hbf-gT-ElC"/>
+                            <constraint firstItem="1IM-LZ-RYc" firstAttribute="top" secondItem="PT6-vL-wFx" secondAttribute="top" constant="40" id="meV-s2-Fou"/>
+                            <constraint firstItem="PT6-vL-wFx" firstAttribute="trailing" secondItem="bMJ-iq-23a" secondAttribute="trailing" constant="20" id="nJJ-e6-8yq"/>
+                            <constraint firstItem="VTK-0X-0gw" firstAttribute="leading" secondItem="PT6-vL-wFx" secondAttribute="leading" constant="20" id="s5c-qb-aQm"/>
+                            <constraint firstItem="PT6-vL-wFx" firstAttribute="trailing" secondItem="VTK-0X-0gw" secondAttribute="trailing" constant="20" id="sRd-rM-TTd"/>
+                            <constraint firstItem="tyu-2T-56D" firstAttribute="leading" secondItem="PT6-vL-wFx" secondAttribute="leading" constant="20" id="zIt-rV-Dis"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Criar Lista" id="tVX-yZ-TpE">
+                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="xZa-3u-lcM">
+                            <connections>
+                                <action selector="backNavigation:" destination="VhN-mP-OSI" id="1zp-cA-r9T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="VTK-0X-0gw" id="ENE-MH-6zl"/>
+                        <outlet property="nameListTextField" destination="PLS-JE-MOH" id="WEw-8p-iur"/>
+                        <outlet property="saveButton" destination="tyu-2T-56D" id="1bu-DM-Ycv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yma-Ah-JqF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6223.125" y="69.718309859154928"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
