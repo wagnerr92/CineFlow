@@ -34,6 +34,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
+    @IBOutlet weak var returnButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,9 @@ class RegisterVC: UIViewController {
     @IBAction func tappedRegisterButton(_ sender: Any) {
     }
     
+    @IBAction func tappedReturnButton(_ sender: Any) {
+    }
+    
     func configTextField(textField: UITextField, delegate: UITextFieldDelegate, keyboard: UIKeyboardType){
         textField.delegate = delegate
         textField.keyboardType = keyboard
@@ -65,6 +69,8 @@ class RegisterVC: UIViewController {
         configTextField(textField: emailTextField, delegate: self, keyboard: .emailAddress)
         configTextField(textField: passwordTextField, delegate: self, keyboard: .emailAddress)
         configTextField(textField: repeatPasswordTextField, delegate: self, keyboard: .emailAddress)
+        configButton(button: returnButton, image: UIImage(systemName: "arroy.left"), aligment: .center
+        )
         
         disableTextField(textField: emailTextField)
         disableTextField(textField: passwordTextField)
@@ -100,10 +106,11 @@ class RegisterVC: UIViewController {
         button.setImage(image, for: .normal)
         button.contentMode = .right
         button.imageView?.translatesAutoresizingMaskIntoConstraints = false
-        button.imageView?.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        button.imageView?.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        button.imageView?.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        button.imageView?.widthAnchor.constraint(equalToConstant: 30).isActive = true
         button.backgroundColor = .clear
         button.setTitle("", for: .normal)
+        button.contentMode = .scaleAspectFit
         
     }
 }

@@ -208,6 +208,29 @@
                                     <action selector="tappedLoginGoogleButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kWt-Bx-cO5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAg-UZ-Urn">
+                                <rect key="frame" x="25" y="30" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XCA-Ar-tcT"/>
+                                    <constraint firstAttribute="width" constant="30" id="v1B-gp-QcV"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content=",&lt;-">
+                                            <attributes>
+                                                <font key="NSFont" size="6" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedReturnButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0T5-3b-qyR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.092857427899999997" green="0.103143163" blue="0.1235498562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -260,6 +283,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Yk0-C2-gd8" secondAttribute="trailing" constant="25" id="inb-jm-dQF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zmh-Wt-wtM" secondAttribute="trailing" constant="25" id="kKX-eq-sjG"/>
                             <constraint firstItem="IGM-Ew-gHe" firstAttribute="centerY" secondItem="vlS-SQ-i6p" secondAttribute="centerY" id="l5c-AM-s71"/>
+                            <constraint firstItem="kdV-cp-fEL" firstAttribute="top" secondItem="FMI-6o-Gqe" secondAttribute="bottom" constant="8.5" id="lIv-e7-cjK"/>
                             <constraint firstItem="Zmh-Wt-wtM" firstAttribute="top" secondItem="MRv-Dw-B1w" secondAttribute="bottom" constant="5" id="lPj-Ry-Fd2"/>
                             <constraint firstItem="vlS-SQ-i6p" firstAttribute="top" secondItem="YXJ-H9-9l8" secondAttribute="bottom" constant="10" id="mRl-9M-tFf"/>
                             <constraint firstItem="GNE-zC-pSf" firstAttribute="centerY" secondItem="YXJ-H9-9l8" secondAttribute="centerY" id="mxb-Hd-Eqx"/>
@@ -268,7 +292,9 @@
                             <constraint firstItem="jjM-01-Hcc" firstAttribute="leading" secondItem="eps-C6-wTl" secondAttribute="leading" id="ryu-5s-DMo"/>
                             <constraint firstItem="fPi-8V-S84" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="smR-eR-YLh"/>
                             <constraint firstItem="FMI-6o-Gqe" firstAttribute="top" secondItem="l8Q-pH-jBd" secondAttribute="bottom" constant="35" id="suO-hH-Toa"/>
+                            <constraint firstItem="vAg-UZ-Urn" firstAttribute="top" secondItem="3a9-0t-rRY" secondAttribute="top" id="t0W-gi-pL8"/>
                             <constraint firstItem="3a9-0t-rRY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="tQv-RP-nxx"/>
+                            <constraint firstItem="vAg-UZ-Urn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="trI-xw-bpM"/>
                             <constraint firstItem="lBP-Bt-Q22" firstAttribute="top" secondItem="DHk-vS-CBd" secondAttribute="bottom" constant="10" id="uWz-6C-iQC"/>
                             <constraint firstItem="Muv-Bl-gvi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="ucZ-sE-dSo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jjM-01-Hcc" secondAttribute="trailing" constant="25" id="wDi-7X-f8Y"/>
@@ -292,6 +318,7 @@
                         <outlet property="registerButton" destination="kdV-cp-fEL" id="NTo-aT-36O"/>
                         <outlet property="repeatPasswordLabel" destination="jjM-01-Hcc" id="17a-VL-Q4h"/>
                         <outlet property="repeatPasswordTextField" destination="eps-C6-wTl" id="WsT-WB-VDO"/>
+                        <outlet property="returnButton" destination="vAg-UZ-Urn" id="Py0-If-bzC"/>
                         <outlet property="stateCapitalLettersImage" destination="YXJ-H9-9l8" id="sIh-cK-dhd"/>
                         <outlet property="stateCapitalLettersLabel" destination="GNE-zC-pSf" id="Irj-J6-fNl"/>
                         <outlet property="stateCharactersImage" destination="DHk-vS-CBd" id="lnj-wh-IYs"/>
@@ -304,10 +331,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="130.40000000000001" y="-34.632683658170919"/>
         </scene>
     </scenes>
     <resources>
         <image name="Alert" width="30" height="30"/>
+        <image name="arrow.left" catalog="system" width="128" height="95"/>
     </resources>
 </document>
