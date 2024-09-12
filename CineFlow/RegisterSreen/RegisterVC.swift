@@ -76,29 +76,9 @@ class RegisterVC: UIViewController {
         passwordTextField.isSecureTextEntry = true
         repeatPasswordTextField.isSecureTextEntry = true
         
-        appleButton.setImage(.apple, for: .normal)
-        appleButton.contentMode = .center
-        appleButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
-        appleButton.imageView?.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        appleButton.imageView?.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        appleButton.backgroundColor = .clear
-        appleButton.setTitle("", for: .normal)
-        
-        facebookButton.setImage(.facebook, for: .normal)
-        facebookButton.contentMode = .center
-        facebookButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
-        facebookButton.imageView?.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        facebookButton.imageView?.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        facebookButton.backgroundColor = .clear
-        facebookButton.setTitle("", for: .normal)
-        
-        googleButton.setImage(.google, for: .normal)
-        googleButton.contentMode = .right
-        googleButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
-        googleButton.imageView?.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        googleButton.imageView?.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        googleButton.backgroundColor = .clear
-        googleButton.setTitle("", for: .normal)
+        configButton(button: appleButton, image: .apple, aligment: .center)
+        configButton(button: facebookButton, image: .facebook, aligment: .center)
+        configButton(button: googleButton, image: .google, aligment: .center)
         
         registerButton.setTitle("Regitrar", for: .normal)
         registerButton.layer.cornerRadius = 20
@@ -114,6 +94,17 @@ class RegisterVC: UIViewController {
     func enableTextField(textField: UITextField){
         textField.isEnabled = true
         textField.backgroundColor = .white
+    }
+    
+    func configButton(button: UIButton, image: UIImage?, aligment: UIControl.ContentHorizontalAlignment){
+        button.setImage(image, for: .normal)
+        button.contentMode = .right
+        button.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        button.imageView?.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.imageView?.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        button.backgroundColor = .clear
+        button.setTitle("", for: .normal)
+        
     }
 }
 
