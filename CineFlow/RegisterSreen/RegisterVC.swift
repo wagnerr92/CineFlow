@@ -40,6 +40,20 @@ class RegisterVC: UIViewController {
         ConfigElements()
     }
     
+    @IBAction func tappedLoginAppleButton(_ sender: Any) {
+    }
+    
+    
+    @IBAction func tappedLoginFacebookButton(_ sender: Any) {
+    }
+    
+    
+    @IBAction func tappedLoginGoogleButton(_ sender: Any) {
+    }
+    
+    @IBAction func tappedRegisterButton(_ sender: Any) {
+    }
+    
     func configTextField(textField: UITextField, delegate: UITextFieldDelegate, keyboard: UIKeyboardType){
         textField.delegate = delegate
         textField.keyboardType = keyboard
@@ -61,11 +75,40 @@ class RegisterVC: UIViewController {
         passwordStatesSameLabel.textColor = .red
         passwordTextField.isSecureTextEntry = true
         repeatPasswordTextField.isSecureTextEntry = true
+        
+        appleButton.setImage(.apple, for: .normal)
+        appleButton.contentMode = .center
+        appleButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        appleButton.imageView?.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        appleButton.imageView?.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        appleButton.backgroundColor = .clear
+        appleButton.setTitle("", for: .normal)
+        
+        facebookButton.setImage(.facebook, for: .normal)
+        facebookButton.contentMode = .center
+        facebookButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        facebookButton.imageView?.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        facebookButton.imageView?.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        facebookButton.backgroundColor = .clear
+        facebookButton.setTitle("", for: .normal)
+        
+        googleButton.setImage(.google, for: .normal)
+        googleButton.contentMode = .right
+        googleButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        googleButton.imageView?.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        googleButton.imageView?.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        googleButton.backgroundColor = .clear
+        googleButton.setTitle("", for: .normal)
+        
+        registerButton.setTitle("Regitrar", for: .normal)
+        registerButton.layer.cornerRadius = 20
+        
     }
     
     func disableTextField(textField: UITextField){
         textField.isEnabled = false
         textField.backgroundColor = .gray
+        
     }
     
     func enableTextField(textField: UITextField){
@@ -135,7 +178,8 @@ extension RegisterVC: UITextFieldDelegate {
 
             if repeatPasswordText == passwordText  && !passwordText.isEmpty && !repeatPasswordText.isEmpty{
                 registerButton.isEnabled = true
-                registerButton.backgroundColor = .green
+                registerButton.backgroundColor = .white
+                registerButton.titleLabel?.textColor = UIColor.black
                 passwordStatesSameLabel.textColor = .green
                 passwordStatesSameLabel.text = "Senhas coincidem!"
             } else {
@@ -149,15 +193,16 @@ extension RegisterVC: UITextFieldDelegate {
             let repeatPasswordText = updatedText
 
             if passwordText == repeatPasswordText && !passwordText.isEmpty && !repeatPasswordText.isEmpty{
-                    registerButton.isEnabled = true
-                    registerButton.backgroundColor = .green
-                    passwordStatesSameLabel.textColor = .green
-                    passwordStatesSameLabel.text = "Senhas coincidem!"
+                registerButton.isEnabled = true
+                registerButton.backgroundColor = .white
+                registerButton.titleLabel?.textColor = UIColor.black
+                passwordStatesSameLabel.textColor = .green
+                passwordStatesSameLabel.text = "Senhas coincidem!"
             } else {
-                    registerButton.isEnabled = false
-                    registerButton.backgroundColor = .gray
-                    passwordStatesSameLabel.textColor = .red
-                    passwordStatesSameLabel.text = "Senhas não coincidem!"
+                registerButton.isEnabled = false
+                registerButton.backgroundColor = .gray
+                passwordStatesSameLabel.textColor = .red
+                passwordStatesSameLabel.text = "Senhas não coincidem!"
                         }
         default:
             break
@@ -191,7 +236,6 @@ extension UITextField {
         let validateRegex = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return validateRegex.evaluate(with: self.text)
     }
-    
     
     func validatePasswordCapitalLetter(updateAll: String) -> Bool {
         let passwordRegex = ".*[A-Z]+.*"
