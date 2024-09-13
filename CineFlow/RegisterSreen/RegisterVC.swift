@@ -33,9 +33,11 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
-    
+   
+    @IBOutlet weak var eyesPasswordButton: UIButton!
+    @IBOutlet weak var eyesRepeatPasswordbutton: UIButton!
     @IBOutlet weak var returnButton: UIButton!
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         ConfigElements()
@@ -52,16 +54,29 @@ class RegisterVC: UIViewController {
     @IBAction func tappedLoginGoogleButton(_ sender: Any) {
     }
     
+    @IBAction func tappedEyesPasswordButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        passwordTextField.isSecureTextEntry.toggle()
+        alterneteImage(eyesButton: eyesPasswordButton)
+    }
+    
+    @IBAction func tappedEyesRepeatPasswordButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        repeatPasswordTextField.isSecureTextEntry.toggle()
+        alterneteImage(eyesButton: eyesRepeatPasswordbutton)
+    }
+    
     @IBAction func tappedRegisterButton(_ sender: Any) {
     }
+    
     
     @IBAction func tappedReturnButton(_ sender: Any) {
     }
     
+    
     func configTextField(textField: UITextField, delegate: UITextFieldDelegate, keyboard: UIKeyboardType){
         textField.delegate = delegate
         textField.keyboardType = keyboard
-        
     }
     
     func ConfigElements(){
@@ -82,9 +97,12 @@ class RegisterVC: UIViewController {
         passwordTextField.isSecureTextEntry = true
         repeatPasswordTextField.isSecureTextEntry = true
         
+        configButton(button: eyesPasswordButton, image: .eyesCloseCopia, aligment: .center)
+        configButton(button: eyesRepeatPasswordbutton, image: .eyesCloseCopia, aligment: .center)
         configButton(button: appleButton, image: .apple, aligment: .center)
         configButton(button: facebookButton, image: .facebook, aligment: .center)
         configButton(button: googleButton, image: .google, aligment: .center)
+        configButton(button: returnButton, image: UIImage(systemName: "arrow.left"), aligment: .center)
         
         registerButton.setTitle("Regitrar", for: .normal)
         registerButton.layer.cornerRadius = 20
@@ -102,25 +120,28 @@ class RegisterVC: UIViewController {
         textField.backgroundColor = .white
     }
     
+    func alterneteImage(eyesButton: UIButton){
+        
+        if eyesButton.currentImage == UIImage.oppenEyesCopia {
+            configButton(button: eyesButton, image: .eyesCloseCopia, aligment: .center)
+        } else {
+            configButton(button: eyesButton, image: .oppenEyesCopia, aligment: .center)
+        }
+    }
+    
     func configButton(button: UIButton, image: UIImage?, aligment: UIControl.ContentHorizontalAlignment){
         button.setImage(image, for: .normal)
-        button.contentMode = .right
+        button.imageView?.contentMode = .scaleAspectFit
         button.imageView?.translatesAutoresizingMaskIntoConstraints = false
         button.imageView?.heightAnchor.constraint(equalToConstant: 30).isActive = true
         button.imageView?.widthAnchor.constraint(equalToConstant: 30).isActive = true
         button.backgroundColor = .clear
         button.setTitle("", for: .normal)
-        button.contentMode = .scaleAspectFit
-        
+        button.contentHorizontalAlignment = .right
     }
 }
 
 extension RegisterVC: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        configSelectTextField(textField: textField)
-        }
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
