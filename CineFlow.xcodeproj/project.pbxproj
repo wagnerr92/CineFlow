@@ -29,6 +29,8 @@
 		11A5BB982C7414C5000FEE6F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 11A5BB972C7414C5000FEE6F /* Base */; };
 		11A5BB9A2C7414C7000FEE6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A5BB992C7414C7000FEE6F /* Assets.xcassets */; };
 		11A5BB9D2C7414C7000FEE6F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 11A5BB9C2C7414C7000FEE6F /* Base */; };
+		11D5E8D82C95442A00FAD169 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D5E8D72C95442A00FAD169 /* LoginViewController.swift */; };
+		11D5E8DA2C95447800FAD169 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D5E8D92C95447800FAD169 /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		11A5BB992C7414C7000FEE6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A5BB9C2C7414C7000FEE6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11A5BB9E2C7414C7000FEE6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11D5E8D72C95442A00FAD169 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		11D5E8D92C95447800FAD169 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 		01A3A2D02C7513C100689FA5 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				11D5E8D62C95440B00FAD169 /* Login */,
 				01A3A2D12C7513C900689FA5 /* List */,
 			);
 			path = Feature;
@@ -193,6 +198,15 @@
 				11A5BB9E2C7414C7000FEE6F /* Info.plist */,
 			);
 			path = CineFlow;
+			sourceTree = "<group>";
+		};
+		11D5E8D62C95440B00FAD169 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				11D5E8D72C95442A00FAD169 /* LoginViewController.swift */,
+				11D5E8D92C95447800FAD169 /* Login.storyboard */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +269,7 @@
 			files = (
 				012EC2C42C78CE7C00A88353 /* DetailListStoryboard.storyboard in Resources */,
 				11A5BB9A2C7414C7000FEE6F /* Assets.xcassets in Resources */,
+				11D5E8DA2C95447800FAD169 /* Login.storyboard in Resources */,
 				01A3A2CF2C7513AC00689FA5 /* ListStoryboard.storyboard in Resources */,
 				11A5BB9D2C7414C7000FEE6F /* Base in Resources */,
 				012EC2BD2C779A0300A88353 /* AddListStoryboard.storyboard in Resources */,
@@ -282,6 +297,7 @@
 				017611CB2C75918800CB2A08 /* UIImageView+Extension.swift in Sources */,
 				012EC2BF2C77AFEF00A88353 /* Helper.swift in Sources */,
 				11A5BB932C7414C5000FEE6F /* SceneDelegate.swift in Sources */,
+				11D5E8D82C95442A00FAD169 /* LoginViewController.swift in Sources */,
 				017611BD2C75862600CB2A08 /* ListTableViewCell.swift in Sources */,
 				015E75772C7D426A00EDAA26 /* IdentifieCell.swift in Sources */,
 				012EC2C82C79016F00A88353 /* DetailListCollectionViewCell.swift in Sources */,
