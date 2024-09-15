@@ -33,6 +33,8 @@
 		11D5E8DA2C95447800FAD169 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D5E8D92C95447800FAD169 /* Login.storyboard */; };
 		A0AB35B42C90DF04001DDC0B /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB35B32C90DF04001DDC0B /* RegisterVC.swift */; };
 		A0AB35B62C90DF14001DDC0B /* RegisterVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AB35B52C90DF14001DDC0B /* RegisterVC.storyboard */; };
+		A0E5FD222C971F9C00BEF945 /* contentDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5FD212C971F9C00BEF945 /* contentDetailsVC.swift */; };
+		A0E5FD242C97205800BEF945 /* contentDetailsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E5FD232C97205800BEF945 /* contentDetailsVC.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		11D5E8D92C95447800FAD169 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A0AB35B32C90DF04001DDC0B /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		A0AB35B52C90DF14001DDC0B /* RegisterVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterVC.storyboard; sourceTree = "<group>"; };
+		A0E5FD212C971F9C00BEF945 /* contentDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = contentDetailsVC.swift; path = "../../../.Trash/CineFlow 10-57-13-387/CineFlow/ContentDatailsScreen/contentDetailsVC.swift"; sourceTree = "<group>"; };
+		A0E5FD232C97205800BEF945 /* contentDetailsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = contentDetailsVC.storyboard; path = ../../../Documents/contentDetailsVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +198,7 @@
 		11A5BB8F2C7414C5000FEE6F /* CineFlow */ = {
 			isa = PBXGroup;
 			children = (
-
+				A0E5FD202C971F7100BEF945 /* contentDatailsScreen */,
 				017611C02C758D3500CB2A08 /* Extensions */,
 				017611B92C753C2500CB2A08 /* Components */,
 				01A3A2D42C75173700689FA5 /* Default */,
@@ -222,6 +226,15 @@
 				A0AB35B52C90DF14001DDC0B /* RegisterVC.storyboard */,
 			);
 			path = RegisterSreen;
+			sourceTree = "<group>";
+		};
+		A0E5FD202C971F7100BEF945 /* contentDatailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A0E5FD212C971F9C00BEF945 /* contentDetailsVC.swift */,
+				A0E5FD232C97205800BEF945 /* contentDetailsVC.storyboard */,
+			);
+			path = contentDatailsScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E5FD242C97205800BEF945 /* contentDetailsVC.storyboard in Resources */,
 				012EC2C42C78CE7C00A88353 /* DetailListStoryboard.storyboard in Resources */,
 				11A5BB9A2C7414C7000FEE6F /* Assets.xcassets in Resources */,
 				11D5E8DA2C95447800FAD169 /* Login.storyboard in Resources */,
@@ -300,7 +314,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				017611C52C758D7C00CB2A08 /* CFColor.swift in Sources */,
 				012EC2C22C78CE6C00A88353 /* DetailListViewController.swift in Sources */,
 				017611C32C758D6200CB2A08 /* UIColor+Extension.swift in Sources */,
@@ -308,6 +321,7 @@
 				017611CD2C7591C400CB2A08 /* CFImage.swift in Sources */,
 				A0AB35B42C90DF04001DDC0B /* RegisterVC.swift in Sources */,
 				11A5BB912C7414C5000FEE6F /* AppDelegate.swift in Sources */,
+				A0E5FD222C971F9C00BEF945 /* contentDetailsVC.swift in Sources */,
 				01A3A2D32C7513D600689FA5 /* ListViewController.swift in Sources */,
 				017611D02C7593BC00CB2A08 /* AddListViewController.swift in Sources */,
 				017611C82C758EDF00CB2A08 /* ListViewModel.swift in Sources */,
