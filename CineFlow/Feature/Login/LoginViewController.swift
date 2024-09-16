@@ -97,6 +97,16 @@ class LoginViewController: UIViewController {
     @IBAction func tappedRegisterButton(_ sender: Any) {
         showNotImplementedAlert()
     }
+    
+    @IBAction func tappedRecoverPassword(_ sender: Any) {
+        
+        let viewController = UIStoryboard(name: "RecoverPassword", bundle: nil).instantiateViewController(withIdentifier: "RecoverPassword") as? RecoverPasswordViewController
+        
+        navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
+        
+        
+        
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
