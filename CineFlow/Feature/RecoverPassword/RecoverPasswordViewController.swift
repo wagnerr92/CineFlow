@@ -59,9 +59,21 @@ class RecoverPasswordViewController: UIViewController {
         }
     }
 
-    @IBAction func sendButtonTapped(_ sender: Any) {
-        print("implementar")
+    @IBAction func tappedSendButton(_ sender: Any) {
+        showEmailSentAlert()
     }
+
+       private func showEmailSentAlert() {
+           let alertController = UIAlertController(title: "Sucesso", message: "E-mail de recuperação enviado com sucesso!", preferredStyle: .alert)
+
+           let subview = alertController.view.subviews.first?.subviews.first?.subviews.first
+           subview?.backgroundColor = UIColor.systemGreen
+           subview?.layer.cornerRadius = 10.0
+
+           alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+           self.present(alertController, animated: true, completion: nil)
+       }
 }
 
 extension RecoverPasswordViewController: UITextFieldDelegate {
