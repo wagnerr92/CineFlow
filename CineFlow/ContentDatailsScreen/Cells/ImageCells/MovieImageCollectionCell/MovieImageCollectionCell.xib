@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieImageCollectionCell" customModule="CineFlow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="257" height="310"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="257" height="310"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVH-Pc-73o">
+                        <rect key="frame" x="0.0" y="0.0" width="257" height="310"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZU8-VO-ssk">
+                                <rect key="frame" x="0.0" y="0.0" width="257" height="310"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="310" id="FGz-57-GDn"/>
+                                    <constraint firstAttribute="width" constant="257" id="Jdf-eC-aD4"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZU8-VO-ssk" secondAttribute="trailing" id="fY8-MH-LcA"/>
+                            <constraint firstItem="ZU8-VO-ssk" firstAttribute="top" secondItem="IVH-Pc-73o" secondAttribute="top" id="rYk-bI-SGC"/>
+                            <constraint firstAttribute="bottom" secondItem="ZU8-VO-ssk" secondAttribute="bottom" id="xeV-3c-yGH"/>
+                            <constraint firstItem="ZU8-VO-ssk" firstAttribute="leading" secondItem="IVH-Pc-73o" secondAttribute="leading" id="zsQ-l0-OHT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="IVH-Pc-73o" secondAttribute="bottom" id="7c6-Qz-1AC"/>
+                <constraint firstItem="IVH-Pc-73o" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Z3E-rh-sW2"/>
+                <constraint firstItem="IVH-Pc-73o" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="b2c-TY-OwN"/>
+                <constraint firstAttribute="trailing" secondItem="IVH-Pc-73o" secondAttribute="trailing" id="x2V-2N-Tvn"/>
+            </constraints>
+            <size key="customSize" width="257" height="310"/>
+            <connections>
+                <outlet property="photosImage" destination="ZU8-VO-ssk" id="gd1-dh-yfS"/>
+                <outlet property="view" destination="IVH-Pc-73o" id="BAh-QQ-upd"/>
+            </connections>
+            <point key="canvasLocation" x="869.46564885496184" y="82.394366197183103"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
