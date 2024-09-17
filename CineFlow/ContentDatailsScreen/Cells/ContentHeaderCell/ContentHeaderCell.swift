@@ -15,6 +15,8 @@ class ContentHeaderCell: UITableViewCell {
     @IBOutlet weak var playerButton: UIButton!
     @IBOutlet weak var StarImage: UIImageView!
     @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var returnButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     static var identifier: String = String(describing: ContentHeaderCell.self)
     static func nib() -> UINib {
@@ -24,6 +26,20 @@ class ContentHeaderCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configElements()
+    }
+    
+    @IBAction func tappedReturnButton(_ sender: UIButton) {
+        showNotImplementedAlert(title: "Adicionar", message: "Deseja adicionar a lista?")
+    }
+    
+    @IBAction func tappedAddButton(_ sender: Any) {
+        
+    }
+    func showAllert(title:String, message:String){
+        let alertErroLogin: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okButton: UIAlertAction = UIAlertAction(title:"OK", style: .default)
+        alertErroLogin.addAction(okButton)
+        self.present(alertErroLogin, animated: true, completion: true)
     }
     
     func setupCell(datails: Datails){
@@ -43,7 +59,9 @@ class ContentHeaderCell: UITableViewCell {
         StarImage.image = UIImage.stars
         StarImage.backgroundColor = .clear
     
-        configButton(button: playerButton)
+        configButton(button: playerButton, nameButton: .init(systemName: "play.circle"), whidth: 40, height: 40)
+        configButton(button: returnButton, nameButton: .init(systemName: "arrow.left.circle.fill"), whidth: 30, height: 30)
+        configButton(button: addButton, nameButton: .init(systemName: "plus.circle.fill"), whidth: 30, height: 30)
         
         pointsLabel.textColor = .white
     }
@@ -53,18 +71,16 @@ class ContentHeaderCell: UITableViewCell {
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: size, weight: .bold)
         label.numberOfLines = 0
-        
     }
     
-    func configButton(button: UIButton) {
-        button.setImage(.init(systemName: "play.circle"), for: .normal)
+    func configButton(button: UIButton, nameButton: UIImage?, whidth: Int, height: Int) {
+        button.setImage(nameButton, for: .normal)
         button.setTitle("", for: .normal)
         button.backgroundColor = .clear
         button.tintColor = .white
         button.imageView?.translatesAutoresizingMaskIntoConstraints = false
-        button.imageView?.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        button.imageView?.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.imageView?.widthAnchor.constraint(equalToConstant: CGFloat(whidth)).isActive = true
+        button.imageView?.heightAnchor.constraint(equalToConstant: CGFloat(height)).isActive = true
     }
+    
 }
-
-
