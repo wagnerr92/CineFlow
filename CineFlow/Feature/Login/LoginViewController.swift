@@ -91,7 +91,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tappedEnterButton(_ sender: Any) {
-        showNotImplementedAlert()
+        navigationController?.pushViewController(TabBarController(), animated: false)
+        
     }
     
     @IBAction func tappedRegisterButton(_ sender: Any) {
@@ -103,9 +104,6 @@ class LoginViewController: UIViewController {
         let viewController = UIStoryboard(name: "RecoverPassword", bundle: nil).instantiateViewController(withIdentifier: "RecoverPassword") as? RecoverPasswordViewController
         
         navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
-        
-        
-        
     }
 }
 
