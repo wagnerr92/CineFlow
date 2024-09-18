@@ -17,10 +17,9 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func tappedletsgoButton(_ sender: Any) {
-        // let login = UIStoryboard(name: "Tela02ViewController", bundle: nil).instantiateViewController(withIdentifier: "Tela02ViewController") as? Tela02ViewController
+        let login = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: String(describing: LoginViewController.self)) as? LoginViewController
         
         //MARK: NavigationController
-        // navigationController?.pushViewController(tela02 ?? UIViewController(), animated: true)    }
+        navigationController?.pushViewController(login ?? UIViewController(), animated: true)
     }
-    
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K97-PM-J5x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kYi-Nv-i5N">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -20,13 +20,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="DHB-MN-CjG">
-                                <rect key="frame" x="77" y="160" width="240" height="152"/>
+                                <rect key="frame" x="77" y="204" width="240" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="152" id="GGk-Sn-CYu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb4-zn-DC8">
-                                <rect key="frame" x="40" y="611.66666666666663" width="313" height="31.333333333333371"/>
+                                <rect key="frame" x="40" y="592.66666666666663" width="313" height="50.333333333333371"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Cadastre todos os seus filmes e séries já assistidas, com comentários, notas e muito mais... Vamos lá?">
                                         <attributes>
@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CINE FLOW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYU-UL-sr8">
-                                <rect key="frame" x="20" y="541.66666666666663" width="353" height="50"/>
+                                <rect key="frame" x="20" y="522.66666666666663" width="353" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2yL-SU-UQW"/>
                                 </constraints>
@@ -81,12 +81,31 @@
                             <constraint firstItem="DHB-MN-CjG" firstAttribute="top" secondItem="bQS-FK-VAl" secondAttribute="top" constant="101" id="uPR-dV-prf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="a3B-J2-WfH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsD-mi-HWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="LwG-o2-ecQ">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+            </objects>
+            <point key="canvasLocation" x="867.93893129770993" y="-8.4507042253521139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="812-5y-cK8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kYi-Nv-i5N" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m04-Dd-SiQ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="K97-PM-J5x" kind="relationship" relationship="rootViewController" id="xXy-LH-Mdf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2J-q6-5bT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-58.778625954198468" y="-8.4507042253521139"/>
         </scene>
