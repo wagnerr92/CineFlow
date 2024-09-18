@@ -19,7 +19,7 @@ class MovieImageCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        view.backgroundColor = .clear
+        view.backgroundColor = .black
         configElementes()
     }
     
