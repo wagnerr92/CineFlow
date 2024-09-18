@@ -10,4 +10,8 @@ import UIKit
 fileprivate let bundle: Bundle = Bundle(for: CFImage.self)
 public class CFImage {
     public static let rightArrow: UIImage? = UIImage(systemName: "chevron.right")
+    public static let tabBarIconHouse: UIImage? = UIImage(systemName: "house")
+    public static let tabBarIconBook: UIImage? = UIImage(systemName: "book")
+    public static let tabBarIconPerson: UIImage? = UIImage(systemName: "person")
+    
 }
