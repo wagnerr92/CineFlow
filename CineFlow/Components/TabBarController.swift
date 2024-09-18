@@ -34,7 +34,7 @@ extension TabBarController {
         }()
         
         let personViewController: UINavigationController = {
-            let controller = UIStoryboard(name: "PersonStoryboard", bundle: nil).instantiateViewController(withIdentifier: String(describing: PersonViewController.self)) as? PersonViewController
+            let controller = UIStoryboard(name: "ProfileStoryboard", bundle: nil).instantiateViewController(withIdentifier: String(describing: ProfileViewController.self)) as? ProfileViewController
             let navigation = UINavigationController(rootViewController: controller ?? UIViewController())
             navigation.tabBarItem = UITabBarItem(title: "Perfil", image: CFImage.tabBarIconPerson, tag: 2)
             

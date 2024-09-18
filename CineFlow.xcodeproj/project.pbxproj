@@ -15,9 +15,9 @@
 		012EC2C82C79016F00A88353 /* DetailListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012EC2C72C79016F00A88353 /* DetailListCollectionViewCell.swift */; };
 		015CE67E2C98FCE4006CFA28 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CE67D2C98FCE4006CFA28 /* TabBarController.swift */; };
 		015CE6812C98FD05006CFA28 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CE67F2C98FD05006CFA28 /* HomeViewController.swift */; };
-		015CE6842C98FD30006CFA28 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CE6832C98FD30006CFA28 /* PersonViewController.swift */; };
+		015CE6842C98FD30006CFA28 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CE6832C98FD30006CFA28 /* ProfileViewController.swift */; };
 		015CE6862C98FE7C006CFA28 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015CE6852C98FE7C006CFA28 /* HomeStoryboard.storyboard */; };
-		015CE6882C990043006CFA28 /* PersonStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015CE6872C990043006CFA28 /* PersonStoryboard.storyboard */; };
+		015CE6882C990043006CFA28 /* ProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015CE6872C990043006CFA28 /* ProfileStoryboard.storyboard */; };
 		015E75772C7D426A00EDAA26 /* IdentifieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E75762C7D426A00EDAA26 /* IdentifieCell.swift */; };
 		017611BB2C753C4700CB2A08 /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017611BA2C753C4700CB2A08 /* EmptyTableView.swift */; };
 		017611BD2C75862600CB2A08 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017611BC2C75862600CB2A08 /* ListTableViewCell.swift */; };
@@ -52,9 +52,9 @@
 		012EC2C72C79016F00A88353 /* DetailListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListCollectionViewCell.swift; sourceTree = "<group>"; };
 		015CE67D2C98FCE4006CFA28 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		015CE67F2C98FD05006CFA28 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		015CE6832C98FD30006CFA28 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonViewController.swift; path = CineFlow/Feature/PersonViewController.swift; sourceTree = SOURCE_ROOT; };
+		015CE6832C98FD30006CFA28 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = CineFlow/Feature/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		015CE6852C98FE7C006CFA28 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
-		015CE6872C990043006CFA28 /* PersonStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonStoryboard.storyboard; sourceTree = "<group>"; };
+		015CE6872C990043006CFA28 /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileStoryboard.storyboard; sourceTree = "<group>"; };
 		015E75762C7D426A00EDAA26 /* IdentifieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifieCell.swift; sourceTree = "<group>"; };
 		017611BA2C753C4700CB2A08 /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
 		017611BC2C75862600CB2A08 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
@@ -113,13 +113,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		015CE6822C98FD14006CFA28 /* Person */ = {
+		015CE6822C98FD14006CFA28 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				015CE6832C98FD30006CFA28 /* PersonViewController.swift */,
-				015CE6872C990043006CFA28 /* PersonStoryboard.storyboard */,
+				015CE6832C98FD30006CFA28 /* ProfileViewController.swift */,
+				015CE6872C990043006CFA28 /* ProfileStoryboard.storyboard */,
 			);
-			path = Person;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		017611B92C753C2500CB2A08 /* Components */ = {
@@ -184,7 +184,7 @@
 			children = (
 				01B01FFE2C9A7CC3004EB317 /* Auth */,
 				A067CA2D2C9A5E6F0083E367 /* Welcome */,
-				015CE6822C98FD14006CFA28 /* Person */,
+				015CE6822C98FD14006CFA28 /* Profile */,
 				015CE6802C98FD05006CFA28 /* Home */,
 				01A3A2D12C7513C900689FA5 /* List */,
 			);
@@ -351,7 +351,7 @@
 				012EC2C42C78CE7C00A88353 /* DetailListStoryboard.storyboard in Resources */,
 				11A5BB9A2C7414C7000FEE6F /* Assets.xcassets in Resources */,
 				015CE6862C98FE7C006CFA28 /* HomeStoryboard.storyboard in Resources */,
-				015CE6882C990043006CFA28 /* PersonStoryboard.storyboard in Resources */,
+				015CE6882C990043006CFA28 /* ProfileStoryboard.storyboard in Resources */,
 				01A3A2CF2C7513AC00689FA5 /* ListStoryboard.storyboard in Resources */,
 				01CDF1E02C9A8A5B0092F0E1 /* RecoverPassword.storyboard in Resources */,
 				01CDF1DB2C9A8A4F0092F0E1 /* Login.storyboard in Resources */,
@@ -377,7 +377,7 @@
 				A067CA302C9A5E6F0083E367 /* WelcomeViewController.swift in Sources */,
 				015CE6812C98FD05006CFA28 /* HomeViewController.swift in Sources */,
 				11A5BB912C7414C5000FEE6F /* AppDelegate.swift in Sources */,
-				015CE6842C98FD30006CFA28 /* PersonViewController.swift in Sources */,
+				015CE6842C98FD30006CFA28 /* ProfileViewController.swift in Sources */,
 				01A3A2D32C7513D600689FA5 /* ListViewController.swift in Sources */,
 				017611D02C7593BC00CB2A08 /* AddListViewController.swift in Sources */,
 				01CDF1DC2C9A8A4F0092F0E1 /* LoginViewController.swift in Sources */,

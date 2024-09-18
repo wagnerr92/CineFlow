@@ -1,5 +1,5 @@
 //
-//  PersonViewController.swift
+//  ProfileViewController.swift
 //  CineFlow
 //
 //  Created by Rodrigo Ventura on 16/09/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PersonViewController: UIViewController {
+class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
