@@ -31,6 +31,8 @@
 		11A5BB982C7414C5000FEE6F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 11A5BB972C7414C5000FEE6F /* Base */; };
 		11A5BB9A2C7414C7000FEE6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A5BB992C7414C7000FEE6F /* Assets.xcassets */; };
 		11A5BB9D2C7414C7000FEE6F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 11A5BB9C2C7414C7000FEE6F /* Base */; };
+		11BCEBD92C9A7F4A0067D2CF /* ChangePasswordStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BCEBD82C9A7F4A0067D2CF /* ChangePasswordStoryboard.storyboard */; };
+		11BCEBDB2C9A7F620067D2CF /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCEBDA2C9A7F620067D2CF /* ChangePasswordViewController.swift */; };
 		11D5E8D82C95442A00FAD169 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D5E8D72C95442A00FAD169 /* LoginViewController.swift */; };
 		11D5E8DA2C95447800FAD169 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D5E8D92C95447800FAD169 /* Login.storyboard */; };
 		A067CA302C9A5E6F0083E367 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067CA2E2C9A5E6F0083E367 /* WelcomeViewController.swift */; };
@@ -66,6 +68,8 @@
 		11A5BB992C7414C7000FEE6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A5BB9C2C7414C7000FEE6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11A5BB9E2C7414C7000FEE6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11BCEBD82C9A7F4A0067D2CF /* ChangePasswordStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePasswordStoryboard.storyboard; sourceTree = "<group>"; };
+		11BCEBDA2C9A7F620067D2CF /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		11D5E8D72C95442A00FAD169 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		11D5E8D92C95447800FAD169 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A067CA2E2C9A5E6F0083E367 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 		01A3A2D02C7513C100689FA5 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				11BCEBD62C9A7F0D0067D2CF /* ChangePassword */,
 				A067CA2D2C9A5E6F0083E367 /* Welcome */,
 				1146A5EA2C97DABF0030DF17 /* RecoverPassword */,
 				11D5E8D62C95440B00FAD169 /* Login */,
@@ -222,6 +227,15 @@
 				11A5BB9E2C7414C7000FEE6F /* Info.plist */,
 			);
 			path = CineFlow;
+			sourceTree = "<group>";
+		};
+		11BCEBD62C9A7F0D0067D2CF /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				11BCEBD82C9A7F4A0067D2CF /* ChangePasswordStoryboard.storyboard */,
+				11BCEBDA2C9A7F620067D2CF /* ChangePasswordViewController.swift */,
+			);
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
 		11D5E8D62C95440B00FAD169 /* Login */ = {
@@ -309,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BCEBD92C9A7F4A0067D2CF /* ChangePasswordStoryboard.storyboard in Resources */,
 				A067CA312C9A5E6F0083E367 /* WelcomeStoryboard.storyboard in Resources */,
 				012EC2C42C78CE7C00A88353 /* DetailListStoryboard.storyboard in Resources */,
 				11A5BB9A2C7414C7000FEE6F /* Assets.xcassets in Resources */,
@@ -335,6 +350,7 @@
 				012EC2C62C78F47100A88353 /* UIViewController+Extension.swift in Sources */,
 				017611CD2C7591C400CB2A08 /* CFImage.swift in Sources */,
 				A0AB35B42C90DF04001DDC0B /* RegisterVC.swift in Sources */,
+				11BCEBDB2C9A7F620067D2CF /* ChangePasswordViewController.swift in Sources */,
 				A067CA302C9A5E6F0083E367 /* WelcomeViewController.swift in Sources */,
 				11A5BB912C7414C5000FEE6F /* AppDelegate.swift in Sources */,
 				01A3A2D32C7513D600689FA5 /* ListViewController.swift in Sources */,
