@@ -154,9 +154,8 @@
 		01A3A2D02C7513C100689FA5 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				01B01FFE2C9A7CC3004EB317 /* Auth */,
 				A067CA2D2C9A5E6F0083E367 /* Welcome */,
-				1146A5EA2C97DABF0030DF17 /* RecoverPassword */,
-				11D5E8D62C95440B00FAD169 /* Login */,
 				01A3A2D12C7513C900689FA5 /* List */,
 			);
 			path = Feature;
@@ -183,6 +182,16 @@
 				11A5BB922C7414C5000FEE6F /* SceneDelegate.swift */,
 			);
 			path = Default;
+			sourceTree = "<group>";
+		};
+		01B01FFE2C9A7CC3004EB317 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1146A5EA2C97DABF0030DF17 /* RecoverPassword */,
+				11D5E8D62C95440B00FAD169 /* Login */,
+				A0AB35B22C90DE64001DDC0B /* RegisterSreen */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		1146A5EA2C97DABF0030DF17 /* RecoverPassword */ = {
@@ -218,7 +227,6 @@
 				01A3A2D42C75173700689FA5 /* Default */,
 				01A3A2D02C7513C100689FA5 /* Feature */,
 				01A3A2CD2C75138200689FA5 /* Storyboards */,
-				A0AB35B22C90DE64001DDC0B /* RegisterSreen */,
 				11A5BB9E2C7414C7000FEE6F /* Info.plist */,
 			);
 			path = CineFlow;
