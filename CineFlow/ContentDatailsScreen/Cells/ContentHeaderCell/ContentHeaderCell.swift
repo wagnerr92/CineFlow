@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol ContentHeaderCellProtocol: AnyObject{
+    func didtappedReturnButton()
+    func didtappedAddButton()
+    
+}
 class ContentHeaderCell: UITableViewCell {
     
+    weak var delegate: ContentHeaderCellProtocol?
+
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
@@ -29,17 +36,11 @@ class ContentHeaderCell: UITableViewCell {
     }
     
     @IBAction func tappedReturnButton(_ sender: UIButton) {
-        showNotImplementedAlert(title: "Adicionar", message: "Deseja adicionar a lista?")
+        delegate?.didtappedReturnButton()
     }
     
     @IBAction func tappedAddButton(_ sender: Any) {
-        
-    }
-    func showAllert(title:String, message:String){
-        let alertErroLogin: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okButton: UIAlertAction = UIAlertAction(title:"OK", style: .default)
-        alertErroLogin.addAction(okButton)
-        self.present(alertErroLogin, animated: true, completion: true)
+        delegate?.didtappedAddButton()
     }
     
     func setupCell(datails: Datails){
@@ -82,5 +83,4 @@ class ContentHeaderCell: UITableViewCell {
         button.imageView?.widthAnchor.constraint(equalToConstant: CGFloat(whidth)).isActive = true
         button.imageView?.heightAnchor.constraint(equalToConstant: CGFloat(height)).isActive = true
     }
-    
 }
