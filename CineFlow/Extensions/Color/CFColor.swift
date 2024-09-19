@@ -18,4 +18,5 @@ public extension CFColor {
     static let white = UIColor(hexString: "#FFFFFF")
     static let redE50914 = UIColor(hexString: "#E50914")
     static let tabBarBackground = UIColor(hexString: "#383838").withAlphaComponent(0.5)
+    static let genresViewBackground = UIColor(hexString: "#383838").withAlphaComponent(0.5)
 }
