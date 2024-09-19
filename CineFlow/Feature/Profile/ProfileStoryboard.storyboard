@@ -14,13 +14,45 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="kpi-vo-Zcx">
+                                <rect key="frame" x="70" y="119" width="253" height="97"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xvs-PX-0Dw">
+                                <rect key="frame" x="0.0" y="358.33333333333326" width="393" height="459.66666666666674"/>
+                                <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2f-EP-5DT">
+                                <rect key="frame" x="130" y="224" width="133" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Alterar foto"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="l2f-EP-5DT" firstAttribute="top" secondItem="kpi-vo-Zcx" secondAttribute="bottom" constant="8" id="8Ft-z4-TCk"/>
+                            <constraint firstItem="xvs-PX-0Dw" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="CKU-Mo-tU8"/>
+                            <constraint firstItem="kpi-vo-Zcx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="EB4-UQ-LYt"/>
+                            <constraint firstItem="xvs-PX-0Dw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="GSP-uY-gSO"/>
+                            <constraint firstItem="l2f-EP-5DT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="130" id="UHC-3L-JaI"/>
+                            <constraint firstItem="kpi-vo-Zcx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="jWb-rG-6XK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kpi-vo-Zcx" secondAttribute="trailing" constant="70" id="lmf-kX-D5c"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xvs-PX-0Dw" secondAttribute="bottom" id="mie-NJ-Q7l"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="l2f-EP-5DT" secondAttribute="trailing" constant="130" id="nVm-Gs-lug"/>
+                            <constraint firstItem="xvs-PX-0Dw" firstAttribute="top" secondItem="l2f-EP-5DT" secondAttribute="bottom" constant="100" id="r2L-zl-cvB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="xvs-PX-0Dw" id="MD0-Oo-brS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="4"/>
+            <point key="canvasLocation" x="140" y="3.1484257871064472"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="userImage" width="71" height="97"/>
+    </resources>
 </document>

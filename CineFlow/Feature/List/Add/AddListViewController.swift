@@ -11,7 +11,6 @@ class AddListViewController: UIViewController {
     var viewModel = ListViewModel()
   
     @IBOutlet weak var nameListTextField: UITextField!
-    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
@@ -48,17 +47,17 @@ extension AddListViewController: UITextFieldDelegate {
 
 extension AddListViewController: ListViewModelDelegate {
     func didSuccess() {
-        navigationController?.popViewController(animated: true)
+        showSimpleAlert(title: "Sucesso", message: "Lista criada!", customTitle: "Ok", customHandler: {_ in
+            self.navigationController?.popViewController(animated: true)
+        })
     }
 }
 
 extension AddListViewController {
     private func addLayout() {
         self.saveButton.layer.cornerRadius = 5
-        self.descriptionTextView.layer.cornerRadius = 5
         self.viewModel.delegate = self
         self.nameListTextField.delegate = self
-        self.descriptionTextView.isEditable = true
         self.saveButton.isEnabled = false
         if saveButton.isEnabled == false {
             saveButton.backgroundColor = .systemGray
