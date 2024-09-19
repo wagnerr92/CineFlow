@@ -50,7 +50,8 @@ extension HomeViewController {
     private func addLayout() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.reuseId)
+        tableView.register(HomeTableViewCell.nib(), forCellReuseIdentifier: HomeTableViewCell.reuseId)
+        tableView.backgroundColor = .none
         movieButton.layer.borderColor = CFColor.white.cgColor
         movieButton.layer.borderWidth = 1
         movieButton.layer.cornerRadius = 10
@@ -65,16 +66,26 @@ extension HomeViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseId, for: indexPath) as? HomeTableViewCell
-        
-        if let cell = cell {
-            cell.setup(image: UIImage(systemName: "person") ?? UIImage())
-        }
-        
+    
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Lançamentos"
+    }
+        
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = .none
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = .white
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150
     }
 }
