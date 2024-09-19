@@ -11,7 +11,7 @@ class ContentDetailsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var list: [Datails] = [Datails(image: UIImage.deadpool, contentTitle: "DeadPool & Volverine", time: "1H 32MIN", yearOfRelease: "2023", formatImage: "4K UHD", movieRatings: "18+", pointsMovie: "3.4")]
+    var list: [Datails] = [Datails(image: UIImage.deadpool1, contentTitle: "DeadPool & Volverine", time: "1H 32MIN", yearOfRelease: "2023", formatImage: "4K UHD", movieRatings: "18+", pointsMovie: "3.4")]
     
     var sinopse: [MovieDescription] = [MovieDescription(descripton: "Wolverine está se recuperando quando cruza seu caminho com Deadpool. Juntos, eles formam uma equipe e enfrentam um inimigo em comum.")]
     
