@@ -10,7 +10,7 @@ import UIKit
 extension UIViewController {
     func showSimpleAlert(title: String,
                          message: String?,
-                         customTitle: String? = nil,
+                         customTitle: String,
                          customHandler: ((UIAlertAction) -> Void)? = nil,
                          cancelTitle: String? = nil,
                          cancelHandler: ((UIAlertAction) -> Void)? = nil,
