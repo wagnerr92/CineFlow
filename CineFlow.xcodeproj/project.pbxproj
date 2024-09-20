@@ -37,6 +37,11 @@
 		01F368542C9CB77600D5674F /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F368532C9CB77600D5674F /* HomeCollectionViewCell.xib */; };
 		01F368552C9CB77600D5674F /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F368522C9CB77600D5674F /* HomeCollectionViewCell.swift */; };
 		01F368572C9CBA8400D5674F /* CoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F368562C9CBA8400D5674F /* CoverModel.swift */; };
+		117CAC7F2C9D066E00AC5CF0 /* SearchResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117CAC7C2C9D066E00AC5CF0 /* SearchResult.storyboard */; };
+		117CAC802C9D066E00AC5CF0 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117CAC782C9D066E00AC5CF0 /* SearchResultTableViewCell.xib */; };
+		117CAC812C9D066E00AC5CF0 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CAC7D2C9D066E00AC5CF0 /* SearchResultViewController.swift */; };
+		117CAC822C9D066E00AC5CF0 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CAC7A2C9D066E00AC5CF0 /* ResultModel.swift */; };
+		117CAC832C9D066E00AC5CF0 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CAC772C9D066E00AC5CF0 /* SearchResultTableViewCell.swift */; };
 		11A5BB912C7414C5000FEE6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5BB902C7414C5000FEE6F /* AppDelegate.swift */; };
 		11A5BB932C7414C5000FEE6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5BB922C7414C5000FEE6F /* SceneDelegate.swift */; };
 		11A5BB982C7414C5000FEE6F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 11A5BB972C7414C5000FEE6F /* Base */; };
@@ -106,6 +111,11 @@
 		01F368522C9CB77600D5674F /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		01F368532C9CB77600D5674F /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		01F368562C9CBA8400D5674F /* CoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverModel.swift; sourceTree = "<group>"; };
+		117CAC772C9D066E00AC5CF0 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		117CAC782C9D066E00AC5CF0 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		117CAC7A2C9D066E00AC5CF0 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		117CAC7C2C9D066E00AC5CF0 /* SearchResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResult.storyboard; sourceTree = "<group>"; };
+		117CAC7D2C9D066E00AC5CF0 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		11A5BB8D2C7414C5000FEE6F /* CineFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A5BB902C7414C5000FEE6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A5BB922C7414C5000FEE6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -335,6 +345,34 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		117CAC792C9D066E00AC5CF0 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				117CAC772C9D066E00AC5CF0 /* SearchResultTableViewCell.swift */,
+				117CAC782C9D066E00AC5CF0 /* SearchResultTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		117CAC7B2C9D066E00AC5CF0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				117CAC7A2C9D066E00AC5CF0 /* ResultModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		117CAC7E2C9D066E00AC5CF0 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				117CAC792C9D066E00AC5CF0 /* cell */,
+				117CAC7B2C9D066E00AC5CF0 /* Model */,
+				117CAC7C2C9D066E00AC5CF0 /* SearchResult.storyboard */,
+				117CAC7D2C9D066E00AC5CF0 /* SearchResultViewController.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		11A5BB842C7414C5000FEE6F = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +416,7 @@
 		11C3DF262C9BD73800126F7C /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				117CAC7E2C9D066E00AC5CF0 /* Result */,
 				11C3DF272C9BD74A00126F7C /* Genre */,
 			);
 			path = Search;
@@ -625,6 +664,8 @@
 				11A5BB982C7414C5000FEE6F /* Base in Resources */,
 				01F3684E2C9CB34A00D5674F /* HomeTableViewCell.xib in Resources */,
 				C476A90D2C9B998800397CCF /* Login.storyboard in Resources */,
+				117CAC7F2C9D066E00AC5CF0 /* SearchResult.storyboard in Resources */,
+				117CAC802C9D066E00AC5CF0 /* SearchResultTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +682,6 @@
 				A008D8C62C9C918500C339C9 /* ContentDetailsVC.swift in Sources */,
 				012EC2C22C78CE6C00A88353 /* DetailListViewController.swift in Sources */,
 				017611C32C758D6200CB2A08 /* UIColor+Extension.swift in Sources */,
-				015E1ED02C9BBCE500D06BD8 /* HomeViewController.swift in Sources */,
 				A008D8CB2C9C918500C339C9 /* datails.swift in Sources */,
 				01F368552C9CB77600D5674F /* HomeCollectionViewCell.swift in Sources */,
 				017611C52C758D7C00CB2A08 /* CFColor.swift in Sources */,
@@ -653,6 +693,9 @@
 				017611CD2C7591C400CB2A08 /* CFImage.swift in Sources */,
 				11BCEBDB2C9A7F620067D2CF /* ChangePasswordViewController.swift in Sources */,
 				015E1EC62C9BBC4100D06BD8 /* PersonalDataViewController.swift in Sources */,
+				117CAC812C9D066E00AC5CF0 /* SearchResultViewController.swift in Sources */,
+				117CAC822C9D066E00AC5CF0 /* ResultModel.swift in Sources */,
+				117CAC832C9D066E00AC5CF0 /* SearchResultTableViewCell.swift in Sources */,
 				A067CA302C9A5E6F0083E367 /* WelcomeViewController.swift in Sources */,
 				11A5BB912C7414C5000FEE6F /* AppDelegate.swift in Sources */,
 				01A3A2D32C7513D600689FA5 /* ListViewController.swift in Sources */,
