@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         tabBarController?.navigationController?.isNavigationBarHidden = true
         tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
     }
 
     @IBAction func tappedMovieButton(_ sender: Any) {
@@ -76,7 +77,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseId, for: indexPath) as? HomeTableViewCell
-    
+        cell?.delegate = self
         return cell ?? UITableViewCell()
     }
     
@@ -92,5 +93,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         150
+    }
+}
+
+extension HomeViewController: HomeTableViewCellDelegate {
+    func goToDetail() {
+        let controller = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: String(describing: ContentDetailsVC.self)) as? ContentDetailsVC
+        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
     }
 }

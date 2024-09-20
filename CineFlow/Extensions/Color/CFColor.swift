@@ -19,4 +19,5 @@ public extension CFColor {
     static let redE50914 = UIColor(hexString: "#E50914")
     static let tabBarBackground = UIColor(hexString: "#383838").withAlphaComponent(0.5)
     static let genresViewBackground = UIColor(hexString: "#383838").withAlphaComponent(0.5)
+    static let menuProfileBG = UIColor(hexString: "#3C3C43").withAlphaComponent(0.3)
 }

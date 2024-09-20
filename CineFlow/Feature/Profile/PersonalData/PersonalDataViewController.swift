@@ -19,6 +19,12 @@ class PersonalDataViewController: UIViewController {
         configTextField()
         addLayout()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     @IBAction func tappeSave(_ sender: Any) {
         showSimpleAlert(title: "Sucesso", message: "Dados alterado com sucesso", customTitle: "ok") { _ in
             self.nameUserTextField.isEnabled = false

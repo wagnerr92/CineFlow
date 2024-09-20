@@ -18,6 +18,11 @@ class ProfileViewController: UIViewController {
         title = "Perfil"
         addConfigTableView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
 }
 
 

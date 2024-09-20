@@ -34,6 +34,11 @@ class SearchResultViewController: UIViewController, NavigationCellProtocol{
         super.viewDidLoad()
         configTableView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
 
     private func configTableView() {
         tableView.delegate = self
@@ -70,7 +75,7 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         print("Selected movie: \(selectedMovie.title)")
         
         let controller = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: String(describing: ContentDetailsVC.self)) as? ContentDetailsVC
-                    navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
         
     }
     

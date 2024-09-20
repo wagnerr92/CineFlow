@@ -14,7 +14,7 @@ class MenuTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addMenuTitle()
-        backgroundColor = CFColor.tabBarBackground
+        backgroundColor = CFColor.menuProfileBG
     }
     
     required init?(coder: NSCoder) {

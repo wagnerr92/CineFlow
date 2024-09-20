@@ -25,6 +25,11 @@ class ContentDetailsVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     func configTableView(){
         tableView.dataSource = self
         tableView.delegate = self
@@ -88,7 +93,7 @@ extension ContentDetailsVC: UITableViewDataSource, UITableViewDelegate {
 
 extension ContentDetailsVC: ContentHeaderCellProtocol {
     func didtappedReturnButton() {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     func didtappedAddButton() {
