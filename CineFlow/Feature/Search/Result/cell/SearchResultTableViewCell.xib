@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="SearchResultTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="152" id="KGk-i7-Jjw" customClass="SearchResultTableViewCell" customModule="CineFlow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="152"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="367" height="152"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bc0-2P-WcY">
+                        <rect key="frame" x="20" y="8" width="91" height="136"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Titulo filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klk-dJ-OI6">
+                        <rect key="frame" x="127" y="8" width="92" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gênero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPL-Jt-o4N">
+                        <rect key="frame" x="127" y="53" width="51" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Srw-7K-l93">
+                        <rect key="frame" x="127" y="79" width="28" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="bc0-2P-WcY" secondAttribute="bottom" constant="8" id="Avm-2g-4ci"/>
+                    <constraint firstItem="Srw-7K-l93" firstAttribute="leading" secondItem="bc0-2P-WcY" secondAttribute="trailing" constant="16" id="IKK-ob-rjh"/>
+                    <constraint firstItem="Srw-7K-l93" firstAttribute="top" secondItem="BPL-Jt-o4N" secondAttribute="bottom" constant="8" id="K35-Pq-W5R"/>
+                    <constraint firstItem="bc0-2P-WcY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="U5O-RX-OWE"/>
+                    <constraint firstItem="Klk-dJ-OI6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="gCc-Fo-IQ4"/>
+                    <constraint firstItem="bc0-2P-WcY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="gMk-Aj-PIu"/>
+                    <constraint firstItem="Klk-dJ-OI6" firstAttribute="leading" secondItem="bc0-2P-WcY" secondAttribute="trailing" constant="16" id="hRv-uD-3Dv"/>
+                    <constraint firstItem="BPL-Jt-o4N" firstAttribute="leading" secondItem="bc0-2P-WcY" secondAttribute="trailing" constant="16" id="rc5-xH-PXy"/>
+                    <constraint firstItem="BPL-Jt-o4N" firstAttribute="top" secondItem="Klk-dJ-OI6" secondAttribute="bottom" constant="24" id="syf-Pt-ivY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="coverImageView" destination="bc0-2P-WcY" id="W3n-ax-aNb"/>
+                <outlet property="genreLabel" destination="BPL-Jt-o4N" id="w5Z-X2-LtM"/>
+                <outlet property="titleLabel" destination="Klk-dJ-OI6" id="vaL-0o-oTl"/>
+                <outlet property="yearLabel" destination="Srw-7K-l93" id="Nul-kP-a0t"/>
+            </connections>
+            <point key="canvasLocation" x="287.78625954198475" y="57.74647887323944"/>
+        </tableViewCell>
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dpw-5S-OaT">
+            <rect key="frame" x="0.0" y="0.0" width="73" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="-11.450381679389313" y="58.450704225352112"/>
+        </imageView>
+    </objects>
+</document>

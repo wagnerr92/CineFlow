@@ -32,6 +32,7 @@
 		017611D02C7593BC00CB2A08 /* AddListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017611CF2C7593BC00CB2A08 /* AddListViewController.swift */; };
 		01A3A2CF2C7513AC00689FA5 /* ListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A3A2CE2C7513AC00689FA5 /* ListStoryboard.storyboard */; };
 		01A3A2D32C7513D600689FA5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A2D22C7513D600689FA5 /* ListViewController.swift */; };
+		117CAC6C2C9BE8DC00AC5CF0 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CAC6B2C9BE8D200AC5CF0 /* ResultModel.swift */; };
 		11A5BB912C7414C5000FEE6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5BB902C7414C5000FEE6F /* AppDelegate.swift */; };
 		11A5BB932C7414C5000FEE6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5BB922C7414C5000FEE6F /* SceneDelegate.swift */; };
 		11A5BB982C7414C5000FEE6F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 11A5BB972C7414C5000FEE6F /* Base */; };
@@ -41,6 +42,10 @@
 		11BCEBDB2C9A7F620067D2CF /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCEBDA2C9A7F620067D2CF /* ChangePasswordViewController.swift */; };
 		11C3DF292C9BD77000126F7C /* GenreSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C3DF282C9BD77000126F7C /* GenreSearch.storyboard */; };
 		11C3DF2B2C9BDD0400126F7C /* GenreSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3DF2A2C9BDD0400126F7C /* GenreSearchViewController.swift */; };
+		11C3DF2E2C9BE46D00126F7C /* SearchResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C3DF2D2C9BE46D00126F7C /* SearchResult.storyboard */; };
+		11C3DF302C9BE48700126F7C /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3DF2F2C9BE48700126F7C /* SearchResultViewController.swift */; };
+		11C3DF342C9BE68400126F7C /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C3DF332C9BE68400126F7C /* SearchResultTableViewCell.xib */; };
+		11C3DF352C9BE68400126F7C /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3DF322C9BE68400126F7C /* SearchResultTableViewCell.swift */; };
 		A067CA302C9A5E6F0083E367 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067CA2E2C9A5E6F0083E367 /* WelcomeViewController.swift */; };
 		A067CA312C9A5E6F0083E367 /* WelcomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A067CA2F2C9A5E6F0083E367 /* WelcomeStoryboard.storyboard */; };
 		C476A9042C9B974100397CCF /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C476A8FE2C9B974100397CCF /* RecoverPasswordViewController.swift */; };
@@ -78,6 +83,7 @@
 		017611CF2C7593BC00CB2A08 /* AddListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewController.swift; sourceTree = "<group>"; };
 		01A3A2CE2C7513AC00689FA5 /* ListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListStoryboard.storyboard; sourceTree = "<group>"; };
 		01A3A2D22C7513D600689FA5 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		117CAC6B2C9BE8D200AC5CF0 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		11A5BB8D2C7414C5000FEE6F /* CineFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A5BB902C7414C5000FEE6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A5BB922C7414C5000FEE6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +95,10 @@
 		11BCEBDA2C9A7F620067D2CF /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		11C3DF282C9BD77000126F7C /* GenreSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GenreSearch.storyboard; sourceTree = "<group>"; };
 		11C3DF2A2C9BDD0400126F7C /* GenreSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSearchViewController.swift; sourceTree = "<group>"; };
+		11C3DF2D2C9BE46D00126F7C /* SearchResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResult.storyboard; sourceTree = "<group>"; };
+		11C3DF2F2C9BE48700126F7C /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		11C3DF322C9BE68400126F7C /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		11C3DF332C9BE68400126F7C /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		A067CA2E2C9A5E6F0083E367 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A067CA2F2C9A5E6F0083E367 /* WelcomeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeStoryboard.storyboard; sourceTree = "<group>"; };
 		C476A8FB2C9B974100397CCF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +270,14 @@
 			path = Default;
 			sourceTree = "<group>";
 		};
+		117CAC6A2C9BE8C700AC5CF0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				117CAC6B2C9BE8D200AC5CF0 /* ResultModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		11A5BB842C7414C5000FEE6F = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +320,7 @@
 		11C3DF262C9BD73800126F7C /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				11C3DF2C2C9BE44B00126F7C /* Result */,
 				11C3DF272C9BD74A00126F7C /* Genre */,
 			);
 			path = Search;
@@ -314,6 +333,26 @@
 				11C3DF2A2C9BDD0400126F7C /* GenreSearchViewController.swift */,
 			);
 			path = Genre;
+			sourceTree = "<group>";
+		};
+		11C3DF2C2C9BE44B00126F7C /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				117CAC6A2C9BE8C700AC5CF0 /* Model */,
+				11C3DF312C9BE64300126F7C /* cell */,
+				11C3DF2D2C9BE46D00126F7C /* SearchResult.storyboard */,
+				11C3DF2F2C9BE48700126F7C /* SearchResultViewController.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		11C3DF312C9BE64300126F7C /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				11C3DF322C9BE68400126F7C /* SearchResultTableViewCell.swift */,
+				11C3DF332C9BE68400126F7C /* SearchResultTableViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		A067CA2D2C9A5E6F0083E367 /* Welcome */ = {
@@ -423,7 +462,9 @@
 				11BCEBD92C9A7F4A0067D2CF /* ChangePasswordStoryboard.storyboard in Resources */,
 				A067CA312C9A5E6F0083E367 /* WelcomeStoryboard.storyboard in Resources */,
 				015E1EC72C9BBC4100D06BD8 /* PersonDataStoryboard.storyboard in Resources */,
+				11C3DF2E2C9BE46D00126F7C /* SearchResult.storyboard in Resources */,
 				012EC2C42C78CE7C00A88353 /* DetailListStoryboard.storyboard in Resources */,
+				11C3DF342C9BE68400126F7C /* SearchResultTableViewCell.xib in Resources */,
 				11A5BB9A2C7414C7000FEE6F /* Assets.xcassets in Resources */,
 				01A3A2CF2C7513AC00689FA5 /* ListStoryboard.storyboard in Resources */,
 				11A5BB9D2C7414C7000FEE6F /* Base in Resources */,
@@ -451,6 +492,7 @@
 				017611C32C758D6200CB2A08 /* UIColor+Extension.swift in Sources */,
 				015E1ED02C9BBCE500D06BD8 /* HomeViewController.swift in Sources */,
 				012EC2C62C78F47100A88353 /* UIViewController+Extension.swift in Sources */,
+				117CAC6C2C9BE8DC00AC5CF0 /* ResultModel.swift in Sources */,
 				017611CD2C7591C400CB2A08 /* CFImage.swift in Sources */,
 				11BCEBDB2C9A7F620067D2CF /* ChangePasswordViewController.swift in Sources */,
 				015E1EC62C9BBC4100D06BD8 /* PersonalDataViewController.swift in Sources */,
@@ -461,6 +503,7 @@
 				017611D02C7593BC00CB2A08 /* AddListViewController.swift in Sources */,
 				017611C82C758EDF00CB2A08 /* ListViewModel.swift in Sources */,
 				017611BB2C753C4700CB2A08 /* EmptyTableView.swift in Sources */,
+				11C3DF302C9BE48700126F7C /* SearchResultViewController.swift in Sources */,
 				017611CB2C75918800CB2A08 /* UIImageView+Extension.swift in Sources */,
 				C476A90B2C9B97ED00397CCF /* TabBarController.swift in Sources */,
 				012EC2BF2C77AFEF00A88353 /* Helper.swift in Sources */,
@@ -470,6 +513,7 @@
 				015E1EC92C9BBC4100D06BD8 /* ProfileViewModel.swift in Sources */,
 				C476A9052C9B974100397CCF /* RegisterVC.swift in Sources */,
 				11C3DF2B2C9BDD0400126F7C /* GenreSearchViewController.swift in Sources */,
+				11C3DF352C9BE68400126F7C /* SearchResultTableViewCell.swift in Sources */,
 				C476A9062C9B974100397CCF /* LoginViewController.swift in Sources */,
 				015E75772C7D426A00EDAA26 /* IdentifieCell.swift in Sources */,
 				012EC2C82C79016F00A88353 /* DetailListCollectionViewCell.swift in Sources */,
