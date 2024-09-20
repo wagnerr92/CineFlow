@@ -60,10 +60,5 @@
             </connections>
             <point key="canvasLocation" x="287.78625954198475" y="57.74647887323944"/>
         </tableViewCell>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dpw-5S-OaT">
-            <rect key="frame" x="0.0" y="0.0" width="73" height="114"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="-11.450381679389313" y="58.450704225352112"/>
-        </imageView>
     </objects>
 </document>

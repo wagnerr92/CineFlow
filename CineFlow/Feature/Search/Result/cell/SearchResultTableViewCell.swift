@@ -9,7 +9,7 @@ import UIKit
 
 class SearchResultTableViewCell: UITableViewCell {
     
-    static let identifier: String = "SearchResultTableViewCell"//String(describing: SearchResultTableViewCell.self)
+    static var identifier: String = "SearchResultTableViewCell"//String(describing: SearchResultTableViewCell.self)
 
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
