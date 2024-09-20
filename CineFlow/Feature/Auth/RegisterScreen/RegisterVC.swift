@@ -29,7 +29,6 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var stateSpecialCharactersImage: UIImageView!
     @IBOutlet weak var StateSpecialCharactersLabel: UILabel!
     
-    @IBOutlet weak var appleButton: UIButton!
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
@@ -90,6 +89,7 @@ class RegisterVC: UIViewController {
         disableTextField(textField: emailTextField)
         disableTextField(textField: passwordTextField)
         disableTextField(textField: repeatPasswordTextField)
+        returnButton.isHidden = true
         
         registerButton.isEnabled = false
         registerButton.backgroundColor = UIColor.gray
@@ -99,7 +99,6 @@ class RegisterVC: UIViewController {
         
         configButton(button: eyesPasswordButton, image: .eyesClose, aligment: .center)
         configButton(button: eyesRepeatPasswordbutton, image: .eyesClose, aligment: .center)
-        configButton(button: appleButton, image: .apple, aligment: .center)
         configButton(button: facebookButton, image: .facebook, aligment: .center)
         configButton(button: googleButton, image: .google, aligment: .center)
         configButton(button: returnButton, image: UIImage(systemName: "arrow.left"), aligment: .center)
