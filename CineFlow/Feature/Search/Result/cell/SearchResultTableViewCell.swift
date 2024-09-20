@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol NavigationCellProtocol: AnyObject{
+    func didtappedNavigateButton()
+}
+
 class SearchResultTableViewCell: UITableViewCell {
     
+    weak var delegate: NavigationCellProtocol?
+        
     static var identifier: String = "SearchResultTableViewCell"//String(describing: SearchResultTableViewCell.self)
 
     static func nib() -> UINib {
@@ -29,6 +35,9 @@ class SearchResultTableViewCell: UITableViewCell {
         titleLabel.text = searchResult.title
         genreLabel.text = searchResult.genre
         yearLabel.text = searchResult.releaseYear
+        
+        coverImageView.contentMode = .scaleAspectFit
+
     }
     
 }

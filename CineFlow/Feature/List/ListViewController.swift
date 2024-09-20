@@ -18,9 +18,11 @@ class ListViewController: UIViewController {
         addLlayout()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+        tabBarController?.tabBar.isHidden = false
     }
     
     @IBAction func AddList(_ sender: UIBarButtonItem) {

@@ -19,6 +19,12 @@ class DetailListViewController: UIViewController {
         self.listTitle.text = listName
         addLayout()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     @IBAction func deleteList(_ sender: UIBarButtonItem) {
          showSimpleAlert(title: "Atenção",
                          message: "Deseja realmente excluir a lista \(self.listName)?",
