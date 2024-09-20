@@ -96,7 +96,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tappedRegisterButton(_ sender: Any) {
-        showNotImplementedAlert()
+        let viewController = UIStoryboard(name: "RegisterVC", bundle: nil).instantiateViewController(withIdentifier: "RegisterVC") as? RegisterVC
+        
+        navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
     }
     
     @IBAction func tappedRecoverPassword(_ sender: Any) {
