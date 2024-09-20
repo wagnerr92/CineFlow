@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = false
     }
 
     @IBAction func tappedMovieButton(_ sender: Any) {

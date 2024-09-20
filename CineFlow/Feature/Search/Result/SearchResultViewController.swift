@@ -7,20 +7,29 @@
 
 import UIKit
 
-class SearchResultViewController: UIViewController {
+class SearchResultViewController: UIViewController, NavigationCellProtocol{
+    
+    //static var navigationCell = SearchResultTableViewCell.self
+    
+    func didtappedNavigateButton() {
+        let viewController = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: "ContentDetailsVC") as? ContentDetailsVC
+        
+        navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
 
     let searchResults: [SearchResult] = [
         SearchResult(
-            title: "Inception", genre: "Sci-Fi", releaseYear: "2010",
-            coverImageName: UIImage.apple),
+            title: "Deadpool 1", genre: "Ação", releaseYear: "2018",
+            coverImageName: UIImage.deadpool1),
         SearchResult(
-            title: "The Dark Knight", genre: "Action", releaseYear: "2008",
-            coverImageName: UIImage.apple),
+            title: "Deadpoo 2", genre: "Ação", releaseYear: "2021",
+            coverImageName: UIImage.deadpool2),
         SearchResult(
-            title: "Interstellar", genre: "Sci-Fi", releaseYear: "2014",
-            coverImageName: UIImage.apple)
+            title: "Deadpool & Wolverine", genre: "Ação", releaseYear: "2024",
+            coverImageName: UIImage.deadpool3)
     ]
 
     override func viewDidLoad() {
@@ -61,6 +70,10 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedMovie = searchResults[indexPath.row]
         print("Selected movie: \(selectedMovie.title)")
+        
+        let controller = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: String(describing: ContentDetailsVC.self)) as? ContentDetailsVC
+                    navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

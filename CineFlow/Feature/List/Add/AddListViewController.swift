@@ -17,6 +17,11 @@ class AddListViewController: UIViewController {
         super.viewDidLoad()
         addLayout()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
 }
 
 extension AddListViewController {

@@ -34,7 +34,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Ação"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Ação">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tappedActionButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="n2Q-fc-YCa"/>
                                         </connections>
@@ -47,7 +49,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Animação"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Animação">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tappedAnimationButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xUf-4j-1k0"/>
                                         </connections>
@@ -60,7 +64,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Terror"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Terror">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tappedHorrorButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="slP-6i-Stt"/>
                                         </connections>
@@ -73,7 +79,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Romance"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Romance">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tappedRomanceButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6zj-Vc-H4X"/>
                                         </connections>
@@ -86,7 +94,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Suspense"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Suspense">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tappedThrillerButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BVG-dw-RCg"/>
                                         </connections>
@@ -99,7 +109,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Drama"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Drama">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tappedDramaButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Vd4-ua-g5O"/>
                                         </connections>
@@ -112,7 +124,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Comédia"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Comédia">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tappedComedyButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kk3-EV-p2e"/>
                                         </connections>
@@ -125,7 +139,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Aventura"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Aventura">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tappedAdventureButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JKW-Gs-ZgY"/>
                                         </connections>
@@ -174,6 +190,7 @@
                             <constraint firstItem="map-fs-dkb" firstAttribute="top" secondItem="k77-hp-vo2" secondAttribute="bottom" constant="20" id="pbu-5f-bXx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="PgQ-uS-Rmp"/>
                     <connections>
                         <outlet property="genresView" destination="map-fs-dkb" id="lHn-N0-mAX"/>
                         <outlet property="searchBar" destination="k77-hp-vo2" id="wPH-Er-5ey"/>
