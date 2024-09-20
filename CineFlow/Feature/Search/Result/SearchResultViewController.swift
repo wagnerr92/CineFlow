@@ -8,9 +8,7 @@
 import UIKit
 
 class SearchResultViewController: UIViewController, NavigationCellProtocol{
-    
-    //static var navigationCell = SearchResultTableViewCell.self
-    
+        
     func didtappedNavigateButton() {
         let viewController = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: "ContentDetailsVC") as? ContentDetailsVC
         
@@ -25,7 +23,7 @@ class SearchResultViewController: UIViewController, NavigationCellProtocol{
             title: "Deadpool 1", genre: "Ação", releaseYear: "2018",
             coverImageName: UIImage.deadpool1),
         SearchResult(
-            title: "Deadpoo 2", genre: "Ação", releaseYear: "2021",
+            title: "Deadpool 2", genre: "Ação", releaseYear: "2021",
             coverImageName: UIImage.deadpool2),
         SearchResult(
             title: "Deadpool & Wolverine", genre: "Ação", releaseYear: "2024",
