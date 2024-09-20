@@ -1,3 +1,4 @@
+
 //
 //  DetailListCollectionViewCell.swift
 //  CineFlow
@@ -8,15 +9,16 @@
 import UIKit
 
 class DetailListCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var coverImage: UIImageView!
+    static func nib() -> UINib {
+        return UINib(nibName: DetailListCollectionViewCell.reuseId, bundle: nil)
+    }
     let itemTitle = UILabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addCategoryTitle()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
     }
     
     func addCategoryTitle() {
@@ -32,5 +34,9 @@ class DetailListCollectionViewCell: UICollectionViewCell {
             itemTitle.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             itemTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor),
         ])
+    }
+    
+    public func setupCell(data: CoverModel) {
+        coverImage.image = UIImage(named: data.coverName)
     }
 }

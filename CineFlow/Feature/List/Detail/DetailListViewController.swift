@@ -13,6 +13,14 @@ class DetailListViewController: UIViewController {
     var numberIndex = Int()
     @IBOutlet weak var listTitle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var covers: [CoverModel] = [
+        CoverModel(coverName: "capa1"),
+        CoverModel(coverName: "capa2"),
+        CoverModel(coverName: "capa3"),
+        CoverModel(coverName: "capa4"),
+        CoverModel(coverName: "capa5")
+        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +31,7 @@ class DetailListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
     }
     
     @IBAction func deleteList(_ sender: UIBarButtonItem) {
@@ -38,17 +47,21 @@ class DetailListViewController: UIViewController {
 
 extension DetailListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        Helper.shared.nameListed.count
+        covers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailListCollectionViewCell.reuseId, for: indexPath)
         
         if let cell = cell as? DetailListCollectionViewCell {
-            cell.backgroundColor = .red
-            cell.itemTitle.text = Helper.shared.nameListed[indexPath.row]
+            cell.setupCell(data: covers[indexPath.row])
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: String(describing: ContentDetailsVC.self)) as? ContentDetailsVC
+        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
     }
 }
 
@@ -57,6 +70,6 @@ extension DetailListViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.layer.cornerRadius = 10
-        self.collectionView.register(DetailListCollectionViewCell.self, forCellWithReuseIdentifier: DetailListCollectionViewCell.reuseId)
+        self.collectionView.register(DetailListCollectionViewCell.nib(), forCellWithReuseIdentifier: DetailListCollectionViewCell.reuseId)
     }
 }
