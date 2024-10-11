@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
@@ -83,7 +86,44 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tappedGoogleButton(_ sender: Any) {
-        showNotImplementedAlert()
+        guard let clientID = FirebaseApp.app()?.options.clientID else {
+               print("Error: clientID is nil.")
+               return
+           }
+
+           _ = GIDConfiguration(clientID: clientID)
+
+           GIDSignIn.sharedInstance.signIn(withPresenting: self) { result, error in
+               if let error = error {
+                   print("Error signing in with Google: \(error.localizedDescription)")
+                   return
+               }
+               
+               guard let user = result?.user else {
+                   print("No user data found")
+                   return
+               }
+               
+               guard let idToken = user.idToken?.tokenString else {
+                   print("Error: ID Token is nil.")
+                   return
+               }
+
+               let accessToken = user.accessToken.tokenString
+
+               let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+
+               // Autenticar no Firebase
+               Auth.auth().signIn(with: credential) { authResult, error in
+                   if let error = error {
+                       print("Firebase sign-in error: \(error.localizedDescription)")
+                       return
+                   }
+
+                   self.navigationController?.pushViewController(TabBarController(), animated: false)
+
+               }
+           }
     }
     
     @IBAction func tappedAppleButton(_ sender: Any) {
@@ -92,7 +132,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func tappedEnterButton(_ sender: Any) {
         navigationController?.pushViewController(TabBarController(), animated: false)
-        
     }
     
     @IBAction func tappedRegisterButton(_ sender: Any) {
