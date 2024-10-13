@@ -79,6 +79,7 @@
 		11BCEBDB2C9A7F620067D2CF /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCEBDA2C9A7F620067D2CF /* ChangePasswordViewController.swift */; };
 		11C3DF292C9BD77000126F7C /* GenreSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C3DF282C9BD77000126F7C /* GenreSearch.storyboard */; };
 		11C3DF2B2C9BDD0400126F7C /* GenreSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3DF2A2C9BDD0400126F7C /* GenreSearchViewController.swift */; };
+		11FC19D22CBC2CF700BF31BE /* UISearchBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC19D12CBC2CF700BF31BE /* UISearchBar+Extension.swift */; };
 		A008D8BA2C9C918500C339C9 /* MovieImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008D8A12C9C918500C339C9 /* MovieImagesCell.swift */; };
 		A008D8BB2C9C918500C339C9 /* MovieImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A008D8A22C9C918500C339C9 /* MovieImagesCell.xib */; };
 		A008D8BC2C9C918500C339C9 /* MovieImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008D8A42C9C918500C339C9 /* MovieImageCollectionCell.swift */; };
@@ -157,6 +158,7 @@
 		11BCEBDA2C9A7F620067D2CF /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		11C3DF282C9BD77000126F7C /* GenreSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GenreSearch.storyboard; sourceTree = "<group>"; };
 		11C3DF2A2C9BDD0400126F7C /* GenreSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSearchViewController.swift; sourceTree = "<group>"; };
+		11FC19D12CBC2CF700BF31BE /* UISearchBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extension.swift"; sourceTree = "<group>"; };
 		A008D8A12C9C918500C339C9 /* MovieImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieImagesCell.swift; sourceTree = "<group>"; };
 		A008D8A22C9C918500C339C9 /* MovieImagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieImagesCell.xib; sourceTree = "<group>"; };
 		A008D8A42C9C918500C339C9 /* MovieImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieImageCollectionCell.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		017611C02C758D3500CB2A08 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				11FC19D02CBC2CD800BF31BE /* SearchBar */,
 				017611C92C75916E00CB2A08 /* Image */,
 				017611C12C758D4500CB2A08 /* Color */,
 				015E75762C7D426A00EDAA26 /* IdentifieCell.swift */,
@@ -487,6 +490,14 @@
 				11C3DF2A2C9BDD0400126F7C /* GenreSearchViewController.swift */,
 			);
 			path = Genre;
+			sourceTree = "<group>";
+		};
+		11FC19D02CBC2CD800BF31BE /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				11FC19D12CBC2CF700BF31BE /* UISearchBar+Extension.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		A008D89D2C9C918500C339C9 /* ContentDatailsScreen */ = {
@@ -779,6 +790,7 @@
 				A008D8C42C9C918500C339C9 /* ContentHeaderCell.swift in Sources */,
 				A008D8C32C9C918500C339C9 /* DescriptionCell.swift in Sources */,
 				11A5BB932C7414C5000FEE6F /* SceneDelegate.swift in Sources */,
+				11FC19D22CBC2CF700BF31BE /* UISearchBar+Extension.swift in Sources */,
 				017611BD2C75862600CB2A08 /* ListTableViewCell.swift in Sources */,
 				C476A9042C9B974100397CCF /* RecoverPasswordViewController.swift in Sources */,
 				A008D8C02C9C918500C339C9 /* ActorsCell.swift in Sources */,

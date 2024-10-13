@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchResultViewController: UIViewController, NavigationCellProtocol{
-        
+    
     func didtappedNavigateButton() {
         let viewController = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: "ContentDetailsVC") as? ContentDetailsVC
         
@@ -17,7 +17,7 @@ class SearchResultViewController: UIViewController, NavigationCellProtocol{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-
+    
     let searchResults: [SearchResult] = [
         SearchResult(
             title: "Deadpool 1", genre: "Ação", releaseYear: "2018",
@@ -29,21 +29,23 @@ class SearchResultViewController: UIViewController, NavigationCellProtocol{
             title: "Deadpool & Wolverine", genre: "Ação", releaseYear: "2024",
             coverImageName: UIImage.deadpool3)
     ]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+        
+        searchBar.configureSearchBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
     }
-
+    
     private func configTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         tableView.register(
             SearchResultTableViewCell.nib(),
             forCellReuseIdentifier: SearchResultTableViewCell.identifier)
