@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterVC: UIViewController {
     
@@ -29,28 +30,15 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var stateSpecialCharactersImage: UIImageView!
     @IBOutlet weak var StateSpecialCharactersLabel: UILabel!
     
-    @IBOutlet weak var facebookButton: UIButton!
-    @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
-   
+    
     @IBOutlet weak var eyesPasswordButton: UIButton!
     @IBOutlet weak var eyesRepeatPasswordbutton: UIButton!
     @IBOutlet weak var returnButton: UIButton!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ConfigElements()
-    }
-    
-    @IBAction func tappedLoginAppleButton(_ sender: Any) {
-    }
-    
-    
-    @IBAction func tappedLoginFacebookButton(_ sender: Any) {
-    }
-    
-    
-    @IBAction func tappedLoginGoogleButton(_ sender: Any) {
     }
     
     @IBAction func tappedEyesPasswordButton(_ sender: UIButton) {
@@ -66,12 +54,37 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func tappedRegisterButton(_ sender: Any) {
+        guard let email = emailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty,
+              let repeatPassword = repeatPasswordTextField.text, password == repeatPassword else {
+            showAlert(message: "Por favor, preencha todos os campos corretamente.")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                self.showAlert(message: "Erro ao criar a conta: \(error.localizedDescription)")
+            } else {
+                // Mensagem de sucesso com ação para voltar ao Login
+                let alert = UIAlertController(title: "Sucesso", message: "Conta criada com sucesso!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    // Voltar para a tela de login após o OK
+                    self.navigationController?.popViewController(animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     
     @IBAction func tappedReturnButton(_ sender: Any) {
     }
     
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func configTextField(textField: UITextField, delegate: UITextFieldDelegate, keyboard: UIKeyboardType){
         textField.delegate = delegate
@@ -99,8 +112,6 @@ class RegisterVC: UIViewController {
         
         configButton(button: eyesPasswordButton, image: .eyesClose, aligment: .center)
         configButton(button: eyesRepeatPasswordbutton, image: .eyesClose, aligment: .center)
-        configButton(button: facebookButton, image: .facebook, aligment: .center)
-        configButton(button: googleButton, image: .google, aligment: .center)
         configButton(button: returnButton, image: UIImage(systemName: "arrow.left"), aligment: .center)
         
         registerButton.setTitle("Regitrar", for: .normal)
@@ -193,7 +204,7 @@ extension RegisterVC: UITextFieldDelegate {
             }
             let repeatPasswordText = repeatPasswordTextField.text ?? ""
             let passwordText = updatedText
-
+            
             if repeatPasswordText == passwordText  && !passwordText.isEmpty && !repeatPasswordText.isEmpty{
                 registerButton.isEnabled = true
                 registerButton.backgroundColor = .white
@@ -205,11 +216,11 @@ extension RegisterVC: UITextFieldDelegate {
                 registerButton.backgroundColor = .gray
                 passwordStatesSameLabel.textColor = .red
                 passwordStatesSameLabel.text = "Senhas não coincidem!"
-                    }
+            }
         case repeatPasswordTextField:
             let passwordText = passwordTextField.text ?? ""
             let repeatPasswordText = updatedText
-
+            
             if passwordText == repeatPasswordText && !passwordText.isEmpty && !repeatPasswordText.isEmpty{
                 registerButton.isEnabled = true
                 registerButton.backgroundColor = .white
@@ -221,7 +232,7 @@ extension RegisterVC: UITextFieldDelegate {
                 registerButton.backgroundColor = .gray
                 passwordStatesSameLabel.textColor = .red
                 passwordStatesSameLabel.text = "Senhas não coincidem!"
-                        }
+            }
         default:
             break
         }
@@ -229,9 +240,9 @@ extension RegisterVC: UITextFieldDelegate {
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 0
-    
+        
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
