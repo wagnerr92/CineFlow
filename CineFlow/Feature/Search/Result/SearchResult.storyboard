@@ -48,6 +48,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="genreLabel" destination="gC3-v1-LeO" id="XFh-AR-GM3"/>
                         <outlet property="searchBar" destination="7aQ-XJ-Okd" id="J86-Ot-pgq"/>
                         <outlet property="tableView" destination="jij-WH-wSc" id="EFt-YF-Qxu"/>
                     </connections>

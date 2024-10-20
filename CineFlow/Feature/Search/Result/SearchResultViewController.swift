@@ -17,6 +17,9 @@ class SearchResultViewController: UIViewController, NavigationCellProtocol{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var genreLabel: UILabel!
+    
+    var selectedGenre: String?
     
     let searchResults: [SearchResult] = [
         SearchResult(
@@ -35,6 +38,10 @@ class SearchResultViewController: UIViewController, NavigationCellProtocol{
         configTableView()
         
         searchBar.configureSearchBar()
+        
+        if let genre = selectedGenre {
+                   genreLabel.text = "Resultado de gênero: \(genre)"
+               }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -29,43 +29,41 @@ class GenreSearchViewController: UIViewController {
     
     
     @IBAction func tappedActionButton(_ sender: Any) {
-        let controller = UIStoryboard(name: "SearchResult", bundle: nil).instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
-        
+        navigateToSearchResult(genre: "Ação")
     }
     
     @IBAction func tappedAdventureButton(_ sender: Any) {
-        let controller = UIStoryboard(name: "SearchResult", bundle: nil).instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+        navigateToSearchResult(genre: "Aventura")
     }
     
     @IBAction func tappedAnimationButton(_ sender: Any) {
-        let controller = UIStoryboard(name: "SearchResult", bundle: nil).instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+        navigateToSearchResult(genre: "Animação")
     }
     
     @IBAction func tappedComedyButton(_ sender: Any) {
-        let controller = UIStoryboard(name: "SearchResult", bundle: nil).instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+        navigateToSearchResult(genre: "Comédia")
     }
     
     @IBAction func tappedHorrorButton(_ sender: Any) {
-        let controller = UIStoryboard(name: "SearchResult", bundle: nil).instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+        navigateToSearchResult(genre: "Terror")
     }
     
     @IBAction func tappedThrillerButton(_ sender: Any) {
-        let controller = UIStoryboard(name: "SearchResult", bundle: nil).instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+        navigateToSearchResult(genre: "Suspense")
     }
     @IBAction func tappedRomanceButton(_ sender: Any) {
-        let controller = UIStoryboard(name: "SearchResult", bundle: nil).instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+        navigateToSearchResult(genre: "Romance")
     }
     
     @IBAction func tappedDramaButton(_ sender: Any) {
-        let controller = UIStoryboard(name: "SearchResult", bundle: nil).instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+        navigateToSearchResult(genre: "Drama")
+    }
+    
+    private func navigateToSearchResult(genre: String) {
+        if let controller = UIStoryboard(name: "SearchResult", bundle: nil).instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController {
+            controller.selectedGenre = genre
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
 }

@@ -80,50 +80,54 @@ class LoginViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
- 
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func tappedFacebookButton(_ sender: Any) {
         showNotImplementedAlert()
     }
     
     @IBAction func tappedGoogleButton(_ sender: Any) {
         guard let clientID = FirebaseApp.app()?.options.clientID else {
-               print("Error: clientID is nil.")
-               return
-           }
-
-           _ = GIDConfiguration(clientID: clientID)
-
-           GIDSignIn.sharedInstance.signIn(withPresenting: self) { result, error in
-               if let error = error {
-                   print("Error signing in with Google: \(error.localizedDescription)")
-                   return
-               }
-               
-               guard let user = result?.user else {
-                   print("No user data found")
-                   return
-               }
-               
-               guard let idToken = user.idToken?.tokenString else {
-                   print("Error: ID Token is nil.")
-                   return
-               }
-
-               let accessToken = user.accessToken.tokenString
-
-               let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-
-               // Autenticar no Firebase
-               Auth.auth().signIn(with: credential) { authResult, error in
-                   if let error = error {
-                       print("Firebase sign-in error: \(error.localizedDescription)")
-                       return
-                   }
-
-                   self.navigationController?.pushViewController(TabBarController(), animated: false)
-
-               }
-           }
+            print("Error: clientID is nil.")
+            return
+        }
+        
+        _ = GIDConfiguration(clientID: clientID)
+        
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { result, error in
+            if let error = error {
+                print("Error signing in with Google: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let user = result?.user else {
+                print("No user data found")
+                return
+            }
+            
+            guard let idToken = user.idToken?.tokenString else {
+                print("Error: ID Token is nil.")
+                return
+            }
+            
+            let accessToken = user.accessToken.tokenString
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+            
+            Auth.auth().signIn(with: credential) { authResult, error in
+                if let error = error {
+                    print("Firebase sign-in error: \(error.localizedDescription)")
+                    return
+                }
+                
+                self.navigationController?.pushViewController(TabBarController(), animated: false)
+                
+            }
+        }
     }
     
     @IBAction func tappedAppleButton(_ sender: Any) {
@@ -131,7 +135,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tappedEnterButton(_ sender: Any) {
-        navigationController?.pushViewController(TabBarController(), animated: false)
+        guard let email = emailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty else {
+            showAlert(message: "Por favor, preencha todos os campos.")
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                self.showAlert(message: "Erro ao fazer login: \(error.localizedDescription)")
+                return
+            }
+            
+            self.navigationController?.pushViewController(TabBarController(), animated: true)
+        }
     }
     
     @IBAction func tappedRegisterButton(_ sender: Any) {
@@ -147,6 +164,8 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
     }
 }
+
+
 
 extension LoginViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
