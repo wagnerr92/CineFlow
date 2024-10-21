@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var serieButton: UIButton!
     @IBOutlet weak var allButtons: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    var viewModel: HomeViewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseId, for: indexPath) as? HomeTableViewCell
         cell?.delegate = self
@@ -82,7 +87,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Lançamentos"
+        switch section {
+        case 0:
+            return "Lançamento"
+        case 1:
+            return "Popular"
+        default:
+            break
+        }
+        return ""
     }
         
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -97,6 +110,30 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeTableViewCellDelegate {
+    func numberOfItemsInSection(section: Int) -> Int {
+        switch section {
+        case 0:
+            return viewModel.numberOfRowsInSection(section: 1).count
+        case 1:
+            return viewModel.numberOfRowsInSection(section: 1).count
+        default:
+            break
+        }
+        return 0
+    }
+    
+    func getMovies(indexpath: IndexPath) -> MovieSerieModel {
+        switch indexpath.section {
+        case 0:
+            return viewModel.getReleaseMoviesList(indexpath: indexpath)
+        case 1:
+            return viewModel.getPopularMoviesList(indexpath: indexpath)
+        default:
+            break
+        }
+        return MovieSerieModel.init(title: "", posterPath: "")
+    }
+    
     func goToDetail() {
         let controller = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: String(describing: ContentDetailsVC.self)) as? ContentDetailsVC
         navigationController?.pushViewController(controller ?? UIViewController(), animated: true)

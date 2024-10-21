@@ -8,6 +8,7 @@
 import Foundation
 
 
-struct CoverModel {
-    var coverName: String
+struct MovieSerieModel {
+    var title: String
+    var posterPath: String
 }
