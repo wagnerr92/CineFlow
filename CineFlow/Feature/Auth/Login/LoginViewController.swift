@@ -23,16 +23,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .black
+
+        configureTextField(emailTextField ?? UITextField(), placeholder: "Digite o seu e-mail", imageName: "mailIcon")
+        configureTextField(passwordTextField ?? UITextField(), placeholder: "Digite a sua senha", imageName: "passwordIcon" )
         
-        configureTextField(emailTextField, placeholder: "Digite o seu e-mail", imageName: "mailIcon")
-        configureTextField(passwordTextField, placeholder: "Digite a sua senha", imageName: "passwordIcon" )
+        emailTextField?.delegate = self
+        passwordTextField?.delegate = self
         
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        
-        enterButton.isEnabled = false
+        enterButton?.isEnabled = false
     }
     
     private func configureTextField(_ textField: UITextField, placeholder: String, imageName: String) {
@@ -69,9 +68,9 @@ class LoginViewController: UIViewController {
     
     
     private func updateEnterButtonState() {
-        let isEmailFilled = emailTextField.hasText
-        let isPasswordFilled = passwordTextField.hasText
-        enterButton.isEnabled = isEmailFilled && isPasswordFilled
+        guard let isEmailFilled = emailTextField?.hasText else { return }
+        guard let isPasswordFilled = passwordTextField?.hasText else { return }
+        enterButton?.isEnabled = isEmailFilled && isPasswordFilled
     }
     
     private func showNotImplementedAlert() {
@@ -135,8 +134,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tappedEnterButton(_ sender: Any) {
-        guard let email = emailTextField.text, !email.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty else {
+        guard let email = emailTextField?.text, !email.isEmpty,
+              let password = passwordTextField?.text, !password.isEmpty else {
             showAlert(message: "Por favor, preencha todos os campos.")
             return
         }

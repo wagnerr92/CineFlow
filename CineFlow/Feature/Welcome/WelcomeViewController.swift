@@ -9,17 +9,37 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    @IBOutlet weak var letsgoButton: UIButton!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
+    private var mainView: WelcomeView = .init()
+    
+    override func loadView() {
+        view = mainView
     }
     
-    @IBAction func tappedletsgoButton(_ sender: Any) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addLayout()
+    }
+}
+
+extension WelcomeViewController {
+    private func addUserDefaults() {
+        Persistence.adduserDefault("isFirstTime", value: false)
+    }
+    
+    private func addAction() {
+        self.mainView.welcomeButton.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
+    }
+    
+    @objc private func goToLogin() {
+        addUserDefaults()
         let login = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: String(describing: LoginViewController.self)) as? LoginViewController
-        
-        //MARK: NavigationController
         navigationController?.pushViewController(login ?? UIViewController(), animated: true)
     }
 }
+
+extension WelcomeViewController {
+    private func addLayout() {
+        addAction()
+    }
+}
+

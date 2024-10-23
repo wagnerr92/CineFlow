@@ -24,8 +24,6 @@
 					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>WelcomeStoryboard</string>
 				</dict>
 			</array>
 		</dict>

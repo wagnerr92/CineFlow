@@ -15,4 +15,7 @@ public class CFImage {
     public static let tabBarIconPerson: UIImage? = UIImage(systemName: "person")
     public static let editIcon: UIImage? = UIImage(systemName: "pencil")
     public static let searchIcon: UIImage? = UIImage(systemName: "magnifyingglass")
+    public static let bgwelcome: UIImage? = UIImage(named: "bgwelcome")
+    public static let logo: UIImage? = UIImage(named: "logo")
+    
 }

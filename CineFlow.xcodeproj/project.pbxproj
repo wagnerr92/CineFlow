@@ -12,6 +12,8 @@
 		012EC2C22C78CE6C00A88353 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012EC2C12C78CE6C00A88353 /* DetailListViewController.swift */; };
 		012EC2C42C78CE7C00A88353 /* DetailListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012EC2C32C78CE7C00A88353 /* DetailListStoryboard.storyboard */; };
 		012EC2C62C78F47100A88353 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012EC2C52C78F47100A88353 /* UIViewController+Extension.swift */; };
+		015072AD2CC823C9002262BF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015072AC2CC823C6002262BF /* Persistence.swift */; };
+		015072B12CC825B0002262BF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015072B02CC825AC002262BF /* WelcomeView.swift */; };
 		015E1EC52C9BBC4100D06BD8 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E1EBD2C9BBC4100D06BD8 /* MenuTableViewCell.swift */; };
 		015E1EC62C9BBC4100D06BD8 /* PersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E1EBF2C9BBC4100D06BD8 /* PersonalDataViewController.swift */; };
 		015E1EC72C9BBC4100D06BD8 /* PersonDataStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015E1EC02C9BBC4100D06BD8 /* PersonDataStoryboard.storyboard */; };
@@ -99,7 +101,6 @@
 		A008D8CA2C9C918500C339C9 /* MovieDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008D8B82C9C918500C339C9 /* MovieDescription.swift */; };
 		A008D8CB2C9C918500C339C9 /* datails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008D8B92C9C918500C339C9 /* datails.swift */; };
 		A067CA302C9A5E6F0083E367 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067CA2E2C9A5E6F0083E367 /* WelcomeViewController.swift */; };
-		A067CA312C9A5E6F0083E367 /* WelcomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A067CA2F2C9A5E6F0083E367 /* WelcomeStoryboard.storyboard */; };
 		C476A9042C9B974100397CCF /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C476A8FE2C9B974100397CCF /* RecoverPasswordViewController.swift */; };
 		C476A9052C9B974100397CCF /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C476A9012C9B974100397CCF /* RegisterVC.swift */; };
 		C476A9062C9B974100397CCF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C476A8FB2C9B974100397CCF /* LoginViewController.swift */; };
@@ -115,6 +116,8 @@
 		012EC2C12C78CE6C00A88353 /* DetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListViewController.swift; sourceTree = "<group>"; };
 		012EC2C32C78CE7C00A88353 /* DetailListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailListStoryboard.storyboard; sourceTree = "<group>"; };
 		012EC2C52C78F47100A88353 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		015072AC2CC823C6002262BF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		015072B02CC825AC002262BF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		015E1EBD2C9BBC4100D06BD8 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		015E1EBF2C9BBC4100D06BD8 /* PersonalDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalDataViewController.swift; sourceTree = "<group>"; };
 		015E1EC02C9BBC4100D06BD8 /* PersonDataStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PersonDataStoryboard.storyboard; sourceTree = "<group>"; };
@@ -178,7 +181,6 @@
 		A008D8B82C9C918500C339C9 /* MovieDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDescription.swift; sourceTree = "<group>"; };
 		A008D8B92C9C918500C339C9 /* datails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = datails.swift; sourceTree = "<group>"; };
 		A067CA2E2C9A5E6F0083E367 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		A067CA2F2C9A5E6F0083E367 /* WelcomeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeStoryboard.storyboard; sourceTree = "<group>"; };
 		C476A8FB2C9B974100397CCF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C476A8FD2C9B974100397CCF /* RecoverPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecoverPassword.storyboard; sourceTree = "<group>"; };
 		C476A8FE2C9B974100397CCF /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,31 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		015072AB2CC823BB002262BF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				012EC2BE2C77AFEF00A88353 /* Helper.swift */,
+				015072AC2CC823C6002262BF /* Persistence.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		015072AE2CC82475002262BF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				012EC2C52C78F47100A88353 /* UIViewController+Extension.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		015072AF2CC82494002262BF /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C476A90A2C9B97ED00397CCF /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		015E1EBC2C9BBC1900D06BD8 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,10 +314,7 @@
 		017611B92C753C2500CB2A08 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C476A90A2C9B97ED00397CCF /* TabBarController.swift */,
 				017611BA2C753C4700CB2A08 /* EmptyTableView.swift */,
-				012EC2BE2C77AFEF00A88353 /* Helper.swift */,
-				012EC2C52C78F47100A88353 /* UIViewController+Extension.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -298,6 +322,8 @@
 		017611C02C758D3500CB2A08 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				015072AF2CC82494002262BF /* TabBar */,
+				015072AE2CC82475002262BF /* ViewController */,
 				11FC19D02CBC2CD800BF31BE /* SearchBar */,
 				017611C92C75916E00CB2A08 /* Image */,
 				017611C12C758D4500CB2A08 /* Color */,
@@ -453,6 +479,7 @@
 		11A5BB8F2C7414C5000FEE6F /* CineFlow */ = {
 			isa = PBXGroup;
 			children = (
+				015072AB2CC823BB002262BF /* Utils */,
 				A008D89D2C9C918500C339C9 /* ContentDatailsScreen */,
 				017611C02C758D3500CB2A08 /* Extensions */,
 				017611B92C753C2500CB2A08 /* Components */,
@@ -608,8 +635,8 @@
 		A067CA2D2C9A5E6F0083E367 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				015072B02CC825AC002262BF /* WelcomeView.swift */,
 				A067CA2E2C9A5E6F0083E367 /* WelcomeViewController.swift */,
-				A067CA2F2C9A5E6F0083E367 /* WelcomeStoryboard.storyboard */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -714,7 +741,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				11BCEBD92C9A7F4A0067D2CF /* ChangePasswordStoryboard.storyboard in Resources */,
-				A067CA312C9A5E6F0083E367 /* WelcomeStoryboard.storyboard in Resources */,
 				A008D8BE2C9C918500C339C9 /* ActorsCollectionViewCell.xib in Resources */,
 				015E1EC72C9BBC4100D06BD8 /* PersonDataStoryboard.storyboard in Resources */,
 				017D6D632C9E1DB10073EFD2 /* DetailListCollectionViewCell.xib in Resources */,
@@ -758,6 +784,7 @@
 				012EC2C22C78CE6C00A88353 /* DetailListViewController.swift in Sources */,
 				017611C32C758D6200CB2A08 /* UIColor+Extension.swift in Sources */,
 				A008D8CB2C9C918500C339C9 /* datails.swift in Sources */,
+				015072B12CC825B0002262BF /* WelcomeView.swift in Sources */,
 				01F368552C9CB77600D5674F /* HomeCollectionViewCell.swift in Sources */,
 				017611C52C758D7C00CB2A08 /* CFColor.swift in Sources */,
 				015E1EC52C9BBC4100D06BD8 /* MenuTableViewCell.swift in Sources */,
@@ -797,6 +824,7 @@
 				015E1EC92C9BBC4100D06BD8 /* ProfileViewModel.swift in Sources */,
 				C476A9052C9B974100397CCF /* RegisterVC.swift in Sources */,
 				A008D8BA2C9C918500C339C9 /* MovieImagesCell.swift in Sources */,
+				015072AD2CC823C9002262BF /* Persistence.swift in Sources */,
 				11C3DF2B2C9BDD0400126F7C /* GenreSearchViewController.swift in Sources */,
 				A008D8BF2C9C918500C339C9 /* ActorsCollectionViewCell.swift in Sources */,
 				C476A9062C9B974100397CCF /* LoginViewController.swift in Sources */,
@@ -957,7 +985,6 @@
 				INFOPLIST_FILE = CineFlow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = WelcomeStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -989,7 +1016,6 @@
 				INFOPLIST_FILE = CineFlow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = WelcomeStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
