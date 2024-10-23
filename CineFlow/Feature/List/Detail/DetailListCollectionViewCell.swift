@@ -36,7 +36,7 @@ class DetailListCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    public func setupCell(data: CoverModel) {
-        coverImage.image = UIImage(named: data.coverName)
+    public func setupCell(data: MovieSerieModel) {
+        coverImage.image = UIImage(named: data.posterPath)
     }
 }

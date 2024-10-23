@@ -30,6 +30,20 @@ class ContentDetailsVC: UIViewController {
         tabBarController?.tabBar.isHidden = true
     }
     
+    init(tableView: UITableView!, list: [Datails], sinopse: [MovieDescription], detailsActors: [Actors], ListPhotos: [Photos]) {
+        
+        self.tableView = tableView
+        self.list = list
+        self.sinopse = sinopse
+        self.detailsActors = detailsActors
+        self.ListPhotos = ListPhotos
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func configTableView(){
         tableView.dataSource = self
         tableView.delegate = self

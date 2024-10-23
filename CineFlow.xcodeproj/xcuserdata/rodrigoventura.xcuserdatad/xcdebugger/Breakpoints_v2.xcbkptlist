@@ -33,6 +33,16 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "addLayout()"
+            uuid = "53A963F7-E5CB-401A-B0A2-68E775BAD2E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CineFlow/Feature/Home/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "getMovies(indexpath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

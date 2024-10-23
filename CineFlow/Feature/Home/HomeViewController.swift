@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var allButtons: UIButton!
     @IBOutlet weak var tableView: UITableView!
     private var filterSelected: Int = 0
+    var viewModel: HomeViewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseId, for: indexPath) as? HomeTableViewCell
         cell?.delegate = self
@@ -114,6 +119,30 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeTableViewCellDelegate {
+    func numberOfItemsInSection(section: Int) -> Int {
+        switch section {
+        case 0:
+            return viewModel.numberOfRowsInSection(section: 1).count
+        case 1:
+            return viewModel.numberOfRowsInSection(section: 1).count
+        default:
+            break
+        }
+        return 0
+    }
+    
+    func getMovies(indexpath: IndexPath) -> MovieSerieModel {
+        switch indexpath.section {
+        case 0:
+            return viewModel.getReleaseMoviesList(indexpath: indexpath)
+        case 1:
+            return viewModel.getPopularMoviesList(indexpath: indexpath)
+        default:
+            break
+        }
+        return MovieSerieModel.init(title: "", posterPath: "", coverImage: "")
+    }
+    
     func goToDetail() {
         let controller = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: String(describing: ContentDetailsVC.self)) as? ContentDetailsVC
         navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
