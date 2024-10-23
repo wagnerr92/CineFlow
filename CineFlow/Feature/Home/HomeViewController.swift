@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var serieButton: UIButton!
     @IBOutlet weak var allButtons: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    private var filterSelected: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +31,20 @@ class HomeViewController: UIViewController {
     @IBAction func tappedMovieButton(_ sender: Any) {
         movieButton.backgroundColor = CFColor.redE50914
         serieButton.backgroundColor = .none
+        filterSelected = 1
+        tableView.reloadData()
     }
     @IBAction func tappedSerieButton(_ sender: Any) {
         movieButton.backgroundColor = .none
         serieButton.backgroundColor = CFColor.redE50914
+        filterSelected = 2
+        tableView.reloadData()
     }
     @IBAction func tappedAllButton(_ sender: Any) {
         movieButton.backgroundColor = .none
         serieButton.backgroundColor = .none
+        filterSelected = 0
+        tableView.reloadData()
     }
 }
 
@@ -82,7 +89,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Lançamentos"
+        switch filterSelected {
+        case 0:
+            return "Lançamentos"
+        case 1:
+            return "Filmes"
+        case 2:
+            return "Séries"
+        default:
+            break
+        }
+        return ""
     }
         
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
