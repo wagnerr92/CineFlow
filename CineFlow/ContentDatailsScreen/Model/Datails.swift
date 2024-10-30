@@ -1,5 +1,5 @@
 //
-//  datails.swift
+//  Datails.swift
 //  CineFlow
 //
 //  Created by Eduardo on 15/09/24.
@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-struct Datails{
-    var image: UIImage?
+struct Details{
+    var image: String?
     var contentTitle: String
     var time: String
     var yearOfRelease: String

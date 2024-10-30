@@ -7,31 +7,13 @@
 
 import UIKit
 
-class SearchResultViewController: UIViewController, NavigationCellProtocol{
-    
-    func didtappedNavigateButton() {
-        let viewController = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: "ContentDetailsVC") as? ContentDetailsVC
-        
-        navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
-    }
+class SearchResultViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var genreLabel: UILabel!
-    
+    var viewModel: SearchResultViewModel = SearchResultViewModel()
     var selectedGenre: String?
-    
-    let searchResults: [SearchResult] = [
-        SearchResult(
-            title: "Deadpool 1", genre: "Ação", releaseYear: "2018",
-            coverImageName: UIImage.deadpool1),
-        SearchResult(
-            title: "Deadpool 2", genre: "Ação", releaseYear: "2021",
-            coverImageName: UIImage.deadpool2),
-        SearchResult(
-            title: "Deadpool & Wolverine", genre: "Ação", releaseYear: "2024",
-            coverImageName: UIImage.deadpool3)
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,25 +48,32 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
+        return viewModel.numberOfRowsInSection().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let searchResult = searchResults[indexPath.row]
-        
+        let searchResult = viewModel.getReleaseMoviesList(indexpath: indexPath, genreSelected: self.selectedGenre ?? "")
+
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as? SearchResultTableViewCell
-        cell?.setupCell(searchResult: searchResult)
+        cell?.setupCell(searchResult: searchResult[indexPath.row])
         
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let selectedMovie = searchResults[indexPath.row]
-        print("Selected movie: \(selectedMovie.title)")
-        
-        let controller = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: String(describing: ContentDetailsVC.self)) as? ContentDetailsVC
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+        let selectedMovie = viewModel.getReleaseMoviesList(indexpath: indexPath, genreSelected: self.selectedGenre ?? "")
+//        print("Selected movie: \(selectedMovie.title)")
+//                
+//        navigationController?.pushViewController(ItemDetailViewController(sinopse: selectedMovie.sinopse,
+//                                                                          detailItem: Details(image: selectedMovie.posterPath,
+//                                                                                              contentTitle: selectedMovie.title,
+//                                                                                              time: "1H 32MIN",
+//                                                                                              yearOfRelease: "2023",
+//                                                                                              formatImage: "4K UHD",
+//                                                                                              movieRatings: "18+",
+//                                                                                              pointsMovie: "3.4")), animated: true)
+
         
     }
     

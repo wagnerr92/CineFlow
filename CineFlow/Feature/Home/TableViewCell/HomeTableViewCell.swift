@@ -8,7 +8,9 @@
 import UIKit
 
 protocol HomeTableViewCellDelegate: AnyObject {
-    func goToDetail()
+    func goToDetail(sinopse: String, title: String, cover: String)
+    func getMovies(indexPath: IndexPath) -> MovieSerieModel
+    func numberOfItemsInSection(section: Int) -> Int
 }
 
 class HomeTableViewCell: UITableViewCell {
@@ -20,19 +22,6 @@ class HomeTableViewCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: HomeTableViewCell.reuseId, bundle: nil)
     }
-
-    var covers: [CoverModel] = [
-        CoverModel(coverName: "capa1"),
-        CoverModel(coverName: "capa2"),
-        CoverModel(coverName: "capa3"),
-        CoverModel(coverName: "capa4"),
-        CoverModel(coverName: "capa5"),
-        CoverModel(coverName: "capa6"),
-        CoverModel(coverName: "capa7"),
-        CoverModel(coverName: "capa8"),
-        CoverModel(coverName: "capa9"),
-        CoverModel(coverName: "capa10")
-    ]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,13 +49,13 @@ extension HomeTableViewCell {
 extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return covers.count
+        return self.delegate?.numberOfItemsInSection(section: section) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseId, for: indexPath) as? HomeCollectionViewCell
         if let cell = cell {
-            cell.setupCell(data: covers[indexPath.row])
+            cell.setupCell(data: self.delegate?.getMovies(indexPath: indexPath))
         }
         return cell ?? UICollectionViewCell()
     }
@@ -76,7 +65,9 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.goToDetail()
+        let title = self.delegate?.getMovies(indexPath: indexPath).title ?? ""
+        let sinopse = self.delegate?.getMovies(indexPath: indexPath).sinopse ?? ""
+        let coverImage = self.delegate?.getMovies(indexPath: indexPath).coverImage ?? ""
+        self.delegate?.goToDetail(sinopse: sinopse, title: title, cover: coverImage)
     }
-    
 }

@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var serieButton: UIButton!
     @IBOutlet weak var allButtons: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    private var filterSelected: Int = 0
+    var viewModel: HomeViewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +32,20 @@ class HomeViewController: UIViewController {
     @IBAction func tappedMovieButton(_ sender: Any) {
         movieButton.backgroundColor = CFColor.redE50914
         serieButton.backgroundColor = .none
+        filterSelected = 1
+        tableView.reloadData()
     }
     @IBAction func tappedSerieButton(_ sender: Any) {
         movieButton.backgroundColor = .none
         serieButton.backgroundColor = CFColor.redE50914
+        filterSelected = 2
+        tableView.reloadData()
     }
     @IBAction func tappedAllButton(_ sender: Any) {
         movieButton.backgroundColor = .none
         serieButton.backgroundColor = .none
+        filterSelected = 0
+        tableView.reloadData()
     }
 }
 
@@ -82,7 +90,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Lançamentos"
+        switch filterSelected {
+        case 0:
+            return "Lançamentos"
+        case 1:
+            return "Filmes"
+        case 2:
+            return "Séries"
+        default:
+            break
+        }
+        return ""
     }
         
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -97,8 +115,40 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeTableViewCellDelegate {
-    func goToDetail() {
-        let controller = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: String(describing: ContentDetailsVC.self)) as? ContentDetailsVC
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+
+    func numberOfItemsInSection(section: Int) -> Int {
+        switch section {
+        case 0:
+            return viewModel.numberOfRowsInSection(section: 0).count
+        case 1:
+            return viewModel.numberOfRowsInSection(section: 1).count
+        default:
+            break
+        }
+        return 0
+    }
+    
+    func getMovies(indexPath indexpath: IndexPath) -> MovieSerieModel {
+        switch indexpath.section {
+        case 0:
+            return viewModel.getReleaseMoviesList(indexpath: indexpath)
+        case 1:
+            return viewModel.getPopularMoviesList(indexpath: indexpath)
+        default:
+            break
+        }
+        return MovieSerieModel.init(title: "", posterPath: "", coverImage: "", sinopse: "", genre: "", releaseYear: "")
+    }
+    
+    func goToDetail(sinopse: String, title: String, cover: String)  {
+
+        navigationController?.pushViewController(ItemDetailViewController(sinopse: sinopse,
+                                                                          detailItem: Details(image: cover,
+                                                                                              contentTitle: title,
+                                                                                              time: "1H 32MIN",
+                                                                                              yearOfRelease: "2023",
+                                                                                              formatImage: "4K UHD",
+                                                                                              movieRatings: "18+",
+                                                                                              pointsMovie: "3.4")), animated: true)
     }
 }

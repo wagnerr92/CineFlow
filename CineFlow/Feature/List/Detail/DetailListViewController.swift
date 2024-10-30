@@ -14,13 +14,9 @@ class DetailListViewController: UIViewController {
     @IBOutlet weak var listTitle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var covers: [CoverModel] = [
-        CoverModel(coverName: "capa1"),
-        CoverModel(coverName: "capa2"),
-        CoverModel(coverName: "capa3"),
-        CoverModel(coverName: "capa4"),
-        CoverModel(coverName: "capa5")
-        ]
+    var covers: [MovieSerieModel] = [
+        MovieSerieModel(title: "Title", posterPath: "capa1", coverImage: "", sinopse: "", genre: "", releaseYear: ""),
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()

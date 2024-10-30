@@ -22,10 +22,18 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     private func configImage() {
         coverImage.layer.cornerRadius = 10
+        coverImage.contentMode = .scaleAspectFill
+        coverImage.layer.borderWidth = 1
+        coverImage.layer.borderColor = CFColor.white.cgColor
     }
 
-    public func setupCell(data: CoverModel) {
-        coverImage.image = UIImage(named: data.coverName)
+    public func setupCell(data: MovieSerieModel?) {
+        guard let imageURL = URL(string: data?.posterPath ?? "") else { return }
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+            DispatchQueue.main.async {
+                self.coverImage.image = UIImage(data: imageData)
+            }
+        }
     }
-    
 }

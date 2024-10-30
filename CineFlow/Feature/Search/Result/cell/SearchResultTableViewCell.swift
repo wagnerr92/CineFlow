@@ -7,14 +7,7 @@
 
 import UIKit
 
-protocol NavigationCellProtocol: AnyObject{
-    func didtappedNavigateButton()
-}
-
 class SearchResultTableViewCell: UITableViewCell {
-    
-    weak var delegate: NavigationCellProtocol?
-        
     static var identifier: String = "SearchResultTableViewCell"//String(describing: SearchResultTableViewCell.self)
 
     static func nib() -> UINib {
@@ -30,12 +23,17 @@ class SearchResultTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setupCell(searchResult: SearchResult){
-        coverImageView.image = searchResult.coverImageName//UIImage(named: searchResult.coverImageName)
+    func setupCell(searchResult: MovieSerieModel){
+        guard let imageURL = URL(string: searchResult.posterPath ) else { return }
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+            DispatchQueue.main.async {
+                self.coverImageView.image = UIImage(data: imageData)
+            }
+        }
         titleLabel.text = searchResult.title
         genreLabel.text = searchResult.genre
         yearLabel.text = searchResult.releaseYear
-        
         coverImageView.contentMode = .scaleAspectFit
 
     }
