@@ -9,7 +9,14 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var perfilImage: UIImageView! {
+        didSet {
+            perfilImage.contentMode = .scaleAspectFill
+            perfilImage.layer.cornerRadius = perfilImage.frame.height / 2
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var changeImageButtom: UIButton!
     
     let viewModel = ProfileViewModel()
     
@@ -22,6 +29,13 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+    }
+    
+    @IBAction func changeImage(_ sender: Any) {
+        let pickerPhoto = UIImagePickerController()
+        pickerPhoto.sourceType = .photoLibrary
+        pickerPhoto.delegate = self
+        present(pickerPhoto, animated: true)
     }
 }
 
@@ -76,5 +90,15 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
+    }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.perfilImage.image = selectedImage
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
 }
