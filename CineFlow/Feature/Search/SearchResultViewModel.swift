@@ -42,12 +42,8 @@ final class SearchResultViewModel {
         return releasedMovies
     }
     
-    public func getReleaseMoviesList(indexpath: IndexPath, genreSelected: String) -> [MovieSerieModel] {
-        var result: [MovieSerieModel] = []
-        
-        result = releasedMovies.filter { genre in
-            genre.genre == genreSelected
-        }
-        return result
+    public func getReleaseMoviesList(indexpath: IndexPath) -> MovieSerieModel {
+
+        return releasedMovies[indexpath.row]
     }
 }

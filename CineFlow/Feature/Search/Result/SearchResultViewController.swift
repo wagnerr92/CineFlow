@@ -52,29 +52,26 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let searchResult = viewModel.getReleaseMoviesList(indexpath: indexPath, genreSelected: self.selectedGenre ?? "")
+        let searchResult = viewModel.getReleaseMoviesList(indexpath: indexPath)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as? SearchResultTableViewCell
-        cell?.setupCell(searchResult: searchResult[indexPath.row])
+        cell?.setupCell(searchResult: searchResult)
         
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let selectedMovie = viewModel.getReleaseMoviesList(indexpath: indexPath, genreSelected: self.selectedGenre ?? "")
-//        print("Selected movie: \(selectedMovie.title)")
-//                
-//        navigationController?.pushViewController(ItemDetailViewController(sinopse: selectedMovie.sinopse,
-//                                                                          detailItem: Details(image: selectedMovie.posterPath,
-//                                                                                              contentTitle: selectedMovie.title,
-//                                                                                              time: "1H 32MIN",
-//                                                                                              yearOfRelease: "2023",
-//                                                                                              formatImage: "4K UHD",
-//                                                                                              movieRatings: "18+",
-//                                                                                              pointsMovie: "3.4")), animated: true)
-
-        
+        let selectedMovie = viewModel.getReleaseMoviesList(indexpath: indexPath)
+                
+        navigationController?.pushViewController(ItemDetailViewController(sinopse: selectedMovie.sinopse,
+                                                                          detailItem: Details(image: selectedMovie.posterPath,
+                                                                                              contentTitle: selectedMovie.title,
+                                                                                              time: "1H 32MIN",
+                                                                                              yearOfRelease: "2023",
+                                                                                              formatImage: "4K UHD",
+                                                                                              movieRatings: "18+",
+                                                                                              pointsMovie: "3.4")), animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
