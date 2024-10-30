@@ -12,4 +12,6 @@ struct MovieSerieModel {
     var posterPath: String
     var coverImage: String
     var sinopse: String
+    var genre: String
+    var releaseYear: String
 }

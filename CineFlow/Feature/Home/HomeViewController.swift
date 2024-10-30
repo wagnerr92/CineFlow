@@ -137,7 +137,7 @@ extension HomeViewController: HomeTableViewCellDelegate {
         default:
             break
         }
-        return MovieSerieModel.init(title: "", posterPath: "", coverImage: "", sinopse: "")
+        return MovieSerieModel.init(title: "", posterPath: "", coverImage: "", sinopse: "", genre: "", releaseYear: "")
     }
     
     func goToDetail(sinopse: String, title: String, cover: String)  {

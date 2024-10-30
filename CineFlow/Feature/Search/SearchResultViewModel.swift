@@ -1,20 +1,19 @@
 //
-//  HomeViewModel.swift
+//  SearchResultViewModel.swift
 //  CineFlow
 //
-//  Created by Rodrigo Ventura on 19/10/24.
+//  Created by Rodrigo Ventura on 30/10/24.
 //
 
 import Foundation
 
-final class HomeViewModel {
-    
+final class SearchResultViewModel {
     private var releasedMovies: [MovieSerieModel] = [
         MovieSerieModel(title: "Robô Selvagem",
                         posterPath: "\(ApiSettings.imageUrl.rawValue)/pG9Vfb3r0Nwd0QO7g01CNaOowXX.jpg",
                         coverImage: "\(ApiSettings.coverUrl.rawValue)/417tYZ4XUyJrtyZXj7HpvWf1E8f.jpg",
                         sinopse: "Um robô – unidade ROZZUM 7134, abreviadamente “Roz” – naufraga em uma ilha desabitada e deve aprender a se adaptar ao ambiente hostil, gradualmente construindo relacionamentos com os animais da ilha e se tornando o pai adotivo de um filhote de ganso órfão.",
-                        genre: "Animação",
+                        genre: "Ação",
                         releaseYear: "202"),
         MovieSerieModel(title: "A Substância",
                         posterPath: "\(ApiSettings.imageUrl.rawValue)/6L3PfQEydRzONYrhtpWtchRhOuV.jpg",
@@ -39,36 +38,16 @@ final class HomeViewModel {
                         releaseYear: "202"),
     ]
     
-    private var populardMovies: [MovieSerieModel] = [
-        MovieSerieModel(title: "Terrifier 2",
-                        posterPath: "\(ApiSettings.imageUrl.rawValue)/kkck5DiLrGkqUDzjGQrxgD6BXVJ.jpg",
-                        coverImage: "\(ApiSettings.coverUrl.rawValue)/eQEgKIRF7KeVGBQ8IYcklpU8RPf.jpg",
-                        sinopse: "", genre: "Animação",
-                        releaseYear: "202"),
-        MovieSerieModel(title: "Transmorphers: Mech Beasts",
-                        posterPath: "\(ApiSettings.imageUrl.rawValue)/oqhaffnQqSzdLrYAQA5W4IdAoCX.jpg",
-                        coverImage: "\(ApiSettings.coverUrl.rawValue)/eQEgKIRF7KeVGBQ8IYcklpU8RPf.jpg",
-                        sinopse: "", genre: "Animação",
-                        releaseYear: "202"),
-    ]
+    public func numberOfRowsInSection() -> [MovieSerieModel] {
+        return releasedMovies
+    }
     
-    public func numberOfRowsInSection(section: Int) -> [MovieSerieModel] {
-        switch section {
-        case 0:
-            return releasedMovies
-        case 1:
-            return populardMovies
-        default:
-            break
+    public func getReleaseMoviesList(indexpath: IndexPath, genreSelected: String) -> [MovieSerieModel] {
+        var result: [MovieSerieModel] = []
+        
+        result = releasedMovies.filter { genre in
+            genre.genre == genreSelected
         }
-        return []
-    }
-    
-    public func getReleaseMoviesList(indexpath: IndexPath) -> MovieSerieModel {
-        return releasedMovies[indexpath.row]
-    }
-    
-    public func getPopularMoviesList(indexpath: IndexPath) -> MovieSerieModel {
-        return populardMovies[indexpath.row]
+        return result
     }
 }

@@ -15,7 +15,7 @@ class DetailListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var covers: [MovieSerieModel] = [
-        MovieSerieModel(title: "Title", posterPath: "capa1", coverImage: "", sinopse: ""),
+        MovieSerieModel(title: "Title", posterPath: "capa1", coverImage: "", sinopse: "", genre: "", releaseYear: ""),
     ]
 
     override func viewDidLoad() {
