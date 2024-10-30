@@ -35,6 +35,5 @@ class HomeCollectionViewCell: UICollectionViewCell {
                 self.coverImage.image = UIImage(data: imageData)
             }
         }
-        
     }
 }

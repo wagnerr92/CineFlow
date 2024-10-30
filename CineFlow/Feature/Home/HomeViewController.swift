@@ -83,10 +83,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseId, for: indexPath) as? HomeTableViewCell
         cell?.delegate = self
@@ -119,10 +115,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeTableViewCellDelegate {
+
     func numberOfItemsInSection(section: Int) -> Int {
         switch section {
         case 0:
-            return viewModel.numberOfRowsInSection(section: 1).count
+            return viewModel.numberOfRowsInSection(section: 0).count
         case 1:
             return viewModel.numberOfRowsInSection(section: 1).count
         default:
@@ -131,7 +128,7 @@ extension HomeViewController: HomeTableViewCellDelegate {
         return 0
     }
     
-    func getMovies(indexpath: IndexPath) -> MovieSerieModel {
+    func getMovies(indexPath indexpath: IndexPath) -> MovieSerieModel {
         switch indexpath.section {
         case 0:
             return viewModel.getReleaseMoviesList(indexpath: indexpath)
@@ -140,11 +137,18 @@ extension HomeViewController: HomeTableViewCellDelegate {
         default:
             break
         }
-        return MovieSerieModel.init(title: "", posterPath: "", coverImage: "")
+        return MovieSerieModel.init(title: "", posterPath: "", coverImage: "", sinopse: "")
     }
     
-    func goToDetail() {
-        let controller = UIStoryboard(name: "ContentDetailsVC", bundle: nil).instantiateViewController(withIdentifier: String(describing: ContentDetailsVC.self)) as? ContentDetailsVC
-        navigationController?.pushViewController(controller ?? UIViewController(), animated: true)
+    func goToDetail(sinopse: String, title: String, cover: String)  {
+
+        navigationController?.pushViewController(ItemDetailViewController(sinopse: sinopse,
+                                                                          detailItem: Details(image: cover,
+                                                                                              contentTitle: title,
+                                                                                              time: "1H 32MIN",
+                                                                                              yearOfRelease: "2023",
+                                                                                              formatImage: "4K UHD",
+                                                                                              movieRatings: "18+",
+                                                                                              pointsMovie: "3.4")), animated: true)
     }
 }

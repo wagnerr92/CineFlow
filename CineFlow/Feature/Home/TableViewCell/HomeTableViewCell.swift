@@ -8,8 +8,8 @@
 import UIKit
 
 protocol HomeTableViewCellDelegate: AnyObject {
-    func goToDetail()
-    func getMovies(indexpath: IndexPath) -> MovieSerieModel
+    func goToDetail(sinopse: String, title: String, cover: String)
+    func getMovies(indexPath: IndexPath) -> MovieSerieModel
     func numberOfItemsInSection(section: Int) -> Int
 }
 
@@ -48,10 +48,6 @@ extension HomeTableViewCell {
 
 extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.delegate?.numberOfItemsInSection(section: section) ?? 0
     }
@@ -59,7 +55,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseId, for: indexPath) as? HomeCollectionViewCell
         if let cell = cell {
-            cell.setupCell(data: self.delegate?.getMovies(indexpath: indexPath))
+            cell.setupCell(data: self.delegate?.getMovies(indexPath: indexPath))
         }
         return cell ?? UICollectionViewCell()
     }
@@ -69,7 +65,9 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.goToDetail()
+        let title = self.delegate?.getMovies(indexPath: indexPath).title ?? ""
+        let sinopse = self.delegate?.getMovies(indexPath: indexPath).sinopse ?? ""
+        let coverImage = self.delegate?.getMovies(indexPath: indexPath).coverImage ?? ""
+        self.delegate?.goToDetail(sinopse: sinopse, title: title, cover: coverImage)
     }
-    
 }

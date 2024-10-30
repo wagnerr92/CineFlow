@@ -11,11 +11,12 @@ class ContentDetailsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var list: [Datails] = [Datails(image: UIImage.deadpool1, contentTitle: "DeadPool & Volverine", time: "1H 32MIN", yearOfRelease: "2023", formatImage: "4K UHD", movieRatings: "18+", pointsMovie: "3.4")]
+    var list: [Details] = [Details(image: "", contentTitle: "DeadPool & Volverine", time: "1H 32MIN", yearOfRelease: "2023", formatImage: "4K UHD", movieRatings: "18+", pointsMovie: "3.4")]
     
     var sinopse: [MovieDescription] = [MovieDescription(descripton: "Wolverine está se recuperando quando cruza seu caminho com Deadpool. Juntos, eles formam uma equipe e enfrentam um inimigo em comum.")]
     
     var detailsActors: [Actors] = [Actors(title: "Elenco", name: ["Ryan Reynolds","Wesley Snipes ", "Morena Baccarin", "Leslie Uggams", "HughJackman", "Emma Corrin", "Dafne Keen", "Channing Tatum ", "Brianna Hildebrand"], image: ["Ryan Reynolds","Wesley Snipes ", "Morena Baccarin", "Leslie Uggams", "HughJackman", "Emma Corrin", "Dafne Keen", "Channing Tatum ", "Brianna Hildebrand"])]
+    
     var ListPhotos: [Photos] = [Photos(title: "Fotos", image: ["deadpool", "deadpool1", "deadpool2", "deadpool3","deadpool", "deadpool1", "deadpool2", "deadpool3","deadpool", "deadpool1", "deadpool2", "deadpool3",])]
                                          
     override func viewDidLoad() {
@@ -28,20 +29,6 @@ class ContentDetailsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
-    }
-    
-    init(tableView: UITableView!, list: [Datails], sinopse: [MovieDescription], detailsActors: [Actors], ListPhotos: [Photos]) {
-        
-        self.tableView = tableView
-        self.list = list
-        self.sinopse = sinopse
-        self.detailsActors = detailsActors
-        self.ListPhotos = ListPhotos
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func configTableView(){

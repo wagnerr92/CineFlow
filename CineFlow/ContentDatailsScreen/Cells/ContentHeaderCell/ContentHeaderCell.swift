@@ -43,8 +43,14 @@ class ContentHeaderCell: UITableViewCell {
         delegate?.didtappedAddButton()
     }
     
-    func setupCell(datails: Datails){
-        backgroundImage.image = datails.image
+    func setupCell(datails: Details){
+        guard let imageURL = URL(string: datails.image ?? "") else { return }
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+            DispatchQueue.main.async {
+                self.backgroundImage.image = UIImage(data: imageData)
+            }
+        }
         nameLabel.text = datails.contentTitle
         infoLabel.text = ("\(datails.time)        \(datails.movieRatings)        \(datails.yearOfRelease)        \(datails.formatImage)")
         pointsLabel.text = datails.pointsMovie
