@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01007CE72CED7188007562AD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01007CE62CED7183007562AD /* LoginViewModel.swift */; };
+		0107092A2CD2E1ED0038DC33 /* PopulateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010709292CD2E1ED0038DC33 /* PopulateCollectionViewCell.xib */; };
+		0107092B2CD2E1ED0038DC33 /* PopulateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010709282CD2E1ED0038DC33 /* PopulateCollectionViewCell.swift */; };
+		0107092E2CD2E35D0038DC33 /* PopulateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0107092D2CD2E35D0038DC33 /* PopulateTableViewCell.xib */; };
+		0107092F2CD2E35D0038DC33 /* PopulateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0107092C2CD2E35D0038DC33 /* PopulateTableViewCell.swift */; };
 		011F6A972CC975E700345FD7 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F6A962CC975E000345FD7 /* ItemDetailView.swift */; };
 		011F6A992CC977F800345FD7 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F6A982CC977F100345FD7 /* ItemDetailViewController.swift */; };
 		011F6A9B2CC979F200345FD7 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F6A9A2CC979EB00345FD7 /* ItemDetailViewModel.swift */; };
@@ -39,6 +44,9 @@
 		0185A5812CD29573009FBC2D /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0185A5802CD2956C009FBC2D /* SearchResultViewModel.swift */; };
 		01A3A2CF2C7513AC00689FA5 /* ListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A3A2CE2C7513AC00689FA5 /* ListStoryboard.storyboard */; };
 		01A3A2D32C7513D600689FA5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A2D22C7513D600689FA5 /* ListViewController.swift */; };
+		01B96D1D2CED79D200D0C7A1 /* RecoverPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96D1C2CED79D000D0C7A1 /* RecoverPasswordViewModel.swift */; };
+		01B96D1F2CED7E5B00D0C7A1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96D1E2CED7E5600D0C7A1 /* RegisterViewModel.swift */; };
+		01B96D222CED7ED800D0C7A1 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96D212CED7EC900D0C7A1 /* UITextField+Extension.swift */; };
 		01F368472C9BC6EE00D5674F /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F368462C9BC6EE00D5674F /* HomeStoryboard.storyboard */; };
 		01F368492C9BC70000D5674F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F368482C9BC70000D5674F /* HomeViewController.swift */; };
 		01F3684E2C9CB34A00D5674F /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F3684D2C9CB34A00D5674F /* HomeTableViewCell.xib */; };
@@ -117,6 +125,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01007CE62CED7183007562AD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		010709282CD2E1ED0038DC33 /* PopulateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateCollectionViewCell.swift; sourceTree = "<group>"; };
+		010709292CD2E1ED0038DC33 /* PopulateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopulateCollectionViewCell.xib; sourceTree = "<group>"; };
+		0107092C2CD2E35D0038DC33 /* PopulateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateTableViewCell.swift; sourceTree = "<group>"; };
+		0107092D2CD2E35D0038DC33 /* PopulateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopulateTableViewCell.xib; sourceTree = "<group>"; };
 		011F6A962CC975E000345FD7 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		011F6A982CC977F100345FD7 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		011F6A9A2CC979EB00345FD7 /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
@@ -149,6 +162,9 @@
 		0185A5802CD2956C009FBC2D /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
 		01A3A2CE2C7513AC00689FA5 /* ListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListStoryboard.storyboard; sourceTree = "<group>"; };
 		01A3A2D22C7513D600689FA5 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		01B96D1C2CED79D000D0C7A1 /* RecoverPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModel.swift; sourceTree = "<group>"; };
+		01B96D1E2CED7E5600D0C7A1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		01B96D212CED7EC900D0C7A1 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		01F368462C9BC6EE00D5674F /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		01F368482C9BC70000D5674F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		01F3684C2C9CB34A00D5674F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -346,6 +362,7 @@
 		017611C02C758D3500CB2A08 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				01B96D202CED7EAF00D0C7A1 /* TextField */,
 				015072AF2CC82494002262BF /* TabBar */,
 				015072AE2CC82475002262BF /* ViewController */,
 				11FC19D02CBC2CD800BF31BE /* SearchBar */,
@@ -430,11 +447,21 @@
 			path = Default;
 			sourceTree = "<group>";
 		};
+		01B96D202CED7EAF00D0C7A1 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				01B96D212CED7EC900D0C7A1 /* UITextField+Extension.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		01F368502C9CB74600D5674F /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				01F3684C2C9CB34A00D5674F /* HomeTableViewCell.swift */,
 				01F3684D2C9CB34A00D5674F /* HomeTableViewCell.xib */,
+				0107092C2CD2E35D0038DC33 /* PopulateTableViewCell.swift */,
+				0107092D2CD2E35D0038DC33 /* PopulateTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -444,6 +471,8 @@
 			children = (
 				01F368522C9CB77600D5674F /* HomeCollectionViewCell.swift */,
 				01F368532C9CB77600D5674F /* HomeCollectionViewCell.xib */,
+				010709282CD2E1ED0038DC33 /* PopulateCollectionViewCell.swift */,
+				010709292CD2E1ED0038DC33 /* PopulateCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -672,6 +701,7 @@
 			children = (
 				C476A90C2C9B998800397CCF /* Login.storyboard */,
 				C476A8FB2C9B974100397CCF /* LoginViewController.swift */,
+				01007CE62CED7183007562AD /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -679,6 +709,7 @@
 		C476A8FF2C9B974100397CCF /* RecoverPassword */ = {
 			isa = PBXGroup;
 			children = (
+				01B96D1C2CED79D000D0C7A1 /* RecoverPasswordViewModel.swift */,
 				C476A8FD2C9B974100397CCF /* RecoverPassword.storyboard */,
 				C476A8FE2C9B974100397CCF /* RecoverPasswordViewController.swift */,
 			);
@@ -688,6 +719,7 @@
 		C476A9022C9B974100397CCF /* RegisterScreen */ = {
 			isa = PBXGroup;
 			children = (
+				01B96D1E2CED7E5600D0C7A1 /* RegisterViewModel.swift */,
 				C476A9012C9B974100397CCF /* RegisterVC.swift */,
 				C476A9002C9B974100397CCF /* RegisterVC.storyboard */,
 			);
@@ -772,6 +804,7 @@
 				017D6D632C9E1DB10073EFD2 /* DetailListCollectionViewCell.xib in Resources */,
 				012EC2C42C78CE7C00A88353 /* DetailListStoryboard.storyboard in Resources */,
 				01F368472C9BC6EE00D5674F /* HomeStoryboard.storyboard in Resources */,
+				0107092A2CD2E1ED0038DC33 /* PopulateCollectionViewCell.xib in Resources */,
 				11A5BB9A2C7414C7000FEE6F /* Assets.xcassets in Resources */,
 				01A3A2CF2C7513AC00689FA5 /* ListStoryboard.storyboard in Resources */,
 				11A5BB9D2C7414C7000FEE6F /* Base in Resources */,
@@ -792,6 +825,7 @@
 				01F3684E2C9CB34A00D5674F /* HomeTableViewCell.xib in Resources */,
 				C476A90D2C9B998800397CCF /* Login.storyboard in Resources */,
 				117CAC7F2C9D066E00AC5CF0 /* SearchResult.storyboard in Resources */,
+				0107092E2CD2E35D0038DC33 /* PopulateTableViewCell.xib in Resources */,
 				117CAC802C9D066E00AC5CF0 /* SearchResultTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -808,6 +842,7 @@
 				015E1EC52C9BBC4100D06BD8 /* MenuTableViewCell.swift in Sources */,
 				A008D8C62C9C918500C339C9 /* ContentDetailsVC.swift in Sources */,
 				012EC2C22C78CE6C00A88353 /* DetailListViewController.swift in Sources */,
+				01B96D222CED7ED800D0C7A1 /* UITextField+Extension.swift in Sources */,
 				017611C32C758D6200CB2A08 /* UIColor+Extension.swift in Sources */,
 				A008D8CB2C9C918500C339C9 /* Datails.swift in Sources */,
 				015072B12CC825B0002262BF /* WelcomeView.swift in Sources */,
@@ -819,6 +854,7 @@
 				017611C32C758D6200CB2A08 /* UIColor+Extension.swift in Sources */,
 				015CC88E2CC460D100FD668C /* ApiSettings.swift in Sources */,
 				0185A5812CD29573009FBC2D /* SearchResultViewModel.swift in Sources */,
+				01B96D1F2CED7E5B00D0C7A1 /* RegisterViewModel.swift in Sources */,
 				012EC2C62C78F47100A88353 /* UIViewController+Extension.swift in Sources */,
 				017611CD2C7591C400CB2A08 /* CFImage.swift in Sources */,
 				11BCEBDB2C9A7F620067D2CF /* ChangePasswordViewController.swift in Sources */,
@@ -831,8 +867,10 @@
 				011F6A972CC975E700345FD7 /* ItemDetailView.swift in Sources */,
 				11A5BB912C7414C5000FEE6F /* AppDelegate.swift in Sources */,
 				01A3A2D32C7513D600689FA5 /* ListViewController.swift in Sources */,
+				0107092B2CD2E1ED0038DC33 /* PopulateCollectionViewCell.swift in Sources */,
 				015E1ECB2C9BBCBC00D06BD8 /* ProfileViewController.swift in Sources */,
 				017611D02C7593BC00CB2A08 /* AddListViewController.swift in Sources */,
+				0107092F2CD2E35D0038DC33 /* PopulateTableViewCell.swift in Sources */,
 				017611C82C758EDF00CB2A08 /* ListViewModel.swift in Sources */,
 				01F368492C9BC70000D5674F /* HomeViewController.swift in Sources */,
 				01F368572C9CBA8400D5674F /* MovieSerieModel.swift in Sources */,
@@ -846,6 +884,8 @@
 				A008D8BC2C9C918500C339C9 /* MovieImageCollectionCell.swift in Sources */,
 				012EC2BF2C77AFEF00A88353 /* Helper.swift in Sources */,
 				A008D8C42C9C918500C339C9 /* ContentHeaderCell.swift in Sources */,
+				01007CE72CED7188007562AD /* LoginViewModel.swift in Sources */,
+				01B96D1D2CED79D200D0C7A1 /* RecoverPasswordViewModel.swift in Sources */,
 				A008D8C32C9C918500C339C9 /* DescriptionCell.swift in Sources */,
 				11A5BB932C7414C5000FEE6F /* SceneDelegate.swift in Sources */,
 				11FC19D22CBC2CF700BF31BE /* UISearchBar+Extension.swift in Sources */,

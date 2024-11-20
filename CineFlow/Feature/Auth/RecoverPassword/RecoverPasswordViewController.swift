@@ -7,15 +7,17 @@
 import UIKit
 
 class RecoverPasswordViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
+    
+    var viewModel: RecoverPasswordViewModel = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = CFColor.backgroundDefault
-        
+        viewModel.delegate = self
         configureTextField(emailTextField, placeholder: "Digite o seu e-mail", imageName: "mailIcon")
         emailTextField.delegate = self
         
@@ -60,20 +62,8 @@ class RecoverPasswordViewController: UIViewController {
     }
 
     @IBAction func tappedSendButton(_ sender: Any) {
-        showEmailSentAlert()
+        viewModel.recoverPassword(email: emailTextField.text ?? "")
     }
-
-       private func showEmailSentAlert() {
-           let alertController = UIAlertController(title: "Sucesso", message: "E-mail de recuperação enviado com sucesso!", preferredStyle: .alert)
-
-           let subview = alertController.view.subviews.first?.subviews.first?.subviews.first
-           subview?.backgroundColor = UIColor.systemGreen
-           subview?.layer.cornerRadius = 10.0
-
-           alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-
-           self.present(alertController, animated: true, completion: nil)
-       }
 }
 
 extension RecoverPasswordViewController: UITextFieldDelegate {
@@ -91,5 +81,15 @@ extension RecoverPasswordViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.black.cgColor
         updateEnterButtonState()
+    }
+}
+
+extension RecoverPasswordViewController: RecoverPasswordViewModelDelegate {
+    func didError(message: String) {
+        showSimpleAlert(title: "Atenção", message: message, customTitle: "OK")
+    }
+    
+    func didSuccess() {
+        showSimpleAlert(title: "Sucesso", message: "E-mail de recuperação enviado com sucesso!", customTitle: "OK")
     }
 }

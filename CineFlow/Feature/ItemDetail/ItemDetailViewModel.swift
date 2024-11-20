@@ -51,6 +51,3 @@ extension ItemDetailViewModel {
         self.list.append(list)
     }
 }
-
-
-//Datails(image: UIImage.deadpool1, contentTitle: "DeadPool & Volverine", time: "1H 32MIN", yearOfRelease: "2023", formatImage: "4K UHD", movieRatings: "18+", pointsMovie: "3.4")

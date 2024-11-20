@@ -65,6 +65,7 @@ extension HomeViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(HomeTableViewCell.nib(), forCellReuseIdentifier: HomeTableViewCell.reuseId)
+        tableView.register(PopulateTableViewCell.nib(), forCellReuseIdentifier: PopulateTableViewCell.reuseId)
         tableView.backgroundColor = .none
         movieButton.layer.borderColor = CFColor.white.cgColor
         movieButton.layer.borderWidth = 1
@@ -83,20 +84,34 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseId, for: indexPath) as? HomeTableViewCell
-        cell?.delegate = self
-        return cell ?? UITableViewCell()
+        
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseId, for: indexPath) as? HomeTableViewCell
+            cell?.delegate = self
+            return cell ?? UITableViewCell()
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: PopulateTableViewCell.reuseId, for: indexPath) as? PopulateTableViewCell
+            cell?.delegate = self
+            return cell ?? UITableViewCell()
+        default:
+            break
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch filterSelected {
+        
+        switch section {
         case 0:
-            return "Lançamentos"
+           return "Lançamentos"
         case 1:
-            return "Filmes"
-        case 2:
-            return "Séries"
+            return "Popular"
         default:
             break
         }
@@ -117,27 +132,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: HomeTableViewCellDelegate {
 
     func numberOfItemsInSection(section: Int) -> Int {
-        switch section {
-        case 0:
-            return viewModel.numberOfRowsInSection(section: 0).count
-        case 1:
-            return viewModel.numberOfRowsInSection(section: 1).count
-        default:
-            break
-        }
-        return 0
+        return viewModel.numberOfRowsInSection(section: 0).count
     }
     
     func getMovies(indexPath indexpath: IndexPath) -> MovieSerieModel {
-        switch indexpath.section {
-        case 0:
-            return viewModel.getReleaseMoviesList(indexpath: indexpath)
-        case 1:
-            return viewModel.getPopularMoviesList(indexpath: indexpath)
-        default:
-            break
-        }
-        return MovieSerieModel.init(title: "", posterPath: "", coverImage: "", sinopse: "", genre: "", releaseYear: "")
+        return viewModel.getReleaseMoviesList(indexpath: indexpath)
     }
     
     func goToDetail(sinopse: String, title: String, cover: String)  {
@@ -152,3 +151,27 @@ extension HomeViewController: HomeTableViewCellDelegate {
                                                                                               pointsMovie: "3.4")), animated: true)
     }
 }
+
+extension HomeViewController: PopulateTableViewCellDelegate {
+
+    func populateNumberOfItemsInSection(section: Int) -> Int {
+        return viewModel.numberOfRowsInSection(section: 1).count
+    }
+    
+    func getPopulateMovies(indexPath: IndexPath) -> MovieSerieModel {
+        return viewModel.getPopularMoviesList(indexpath: indexPath)
+    }
+    
+    func goToDetailbyPopulate(sinopse: String, title: String, cover: String) {
+        navigationController?.pushViewController(ItemDetailViewController(sinopse: sinopse,
+                                                                          detailItem: Details(image: cover,
+                                                                                              contentTitle: title,
+                                                                                              time: "1H 32MIN",
+                                                                                              yearOfRelease: "2023",
+                                                                                              formatImage: "4K UHD",
+                                                                                              movieRatings: "18+",
+                                                                                              pointsMovie: "3.4")), animated: true)
+    }
+
+}
+    

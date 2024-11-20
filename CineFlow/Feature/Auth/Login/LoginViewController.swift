@@ -6,25 +6,20 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
-import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var enterButton: UIButton!
-    
     @IBOutlet weak var registerButton: UIButton!
+    
+    var viewModel: LoginViewModel = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-
+        viewModel.delegate = self
         configureTextField(emailTextField ?? UITextField(), placeholder: "Digite o seu e-mail", imageName: "mailIcon")
         configureTextField(passwordTextField ?? UITextField(), placeholder: "Digite a sua senha", imageName: "passwordIcon" )
         
@@ -66,88 +61,27 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
     private func updateEnterButtonState() {
         guard let isEmailFilled = emailTextField?.hasText else { return }
         guard let isPasswordFilled = passwordTextField?.hasText else { return }
         enterButton?.isEnabled = isEmailFilled && isPasswordFilled
     }
-    
-    private func showNotImplementedAlert() {
-        let alert = UIAlertController(title: "Atenção", message: "Funcionalidade ainda não implementada", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
+        
     @IBAction func tappedFacebookButton(_ sender: Any) {
-        showNotImplementedAlert()
+        showSimpleAlert(title: "Atenção", message: "Funcionalidade ainda não implementada", customTitle: "OK")
     }
     
     @IBAction func tappedGoogleButton(_ sender: Any) {
-        guard let clientID = FirebaseApp.app()?.options.clientID else {
-            print("Error: clientID is nil.")
-            return
-        }
-        
-        _ = GIDConfiguration(clientID: clientID)
-        
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { result, error in
-            if let error = error {
-                print("Error signing in with Google: \(error.localizedDescription)")
-                return
-            }
-            
-            guard let user = result?.user else {
-                print("No user data found")
-                return
-            }
-            
-            guard let idToken = user.idToken?.tokenString else {
-                print("Error: ID Token is nil.")
-                return
-            }
-            
-            let accessToken = user.accessToken.tokenString
-            
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-            
-            Auth.auth().signIn(with: credential) { authResult, error in
-                if let error = error {
-                    print("Firebase sign-in error: \(error.localizedDescription)")
-                    return
-                }
-                
-                self.navigationController?.pushViewController(TabBarController(), animated: false)
-                
-            }
-        }
+        self.viewModel.googleLogin(controller: self)
     }
-    
-    @IBAction func tappedAppleButton(_ sender: Any) {
-        showNotImplementedAlert()
-    }
-    
+        
     @IBAction func tappedEnterButton(_ sender: Any) {
         guard let email = emailTextField?.text, !email.isEmpty,
               let password = passwordTextField?.text, !password.isEmpty else {
-            showAlert(message: "Por favor, preencha todos os campos.")
+            showSimpleAlert(title: "Atenção", message: "Por favor, preencha todos os campos.", customTitle: "Ok")
             return
         }
-        
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                self.showAlert(message: "Erro ao fazer login: \(error.localizedDescription)")
-                return
-            }
-            
-            self.navigationController?.pushViewController(TabBarController(), animated: true)
-        }
+        self.viewModel.signIn(email: email, password: password)
     }
     
     @IBAction func tappedRegisterButton(_ sender: Any) {
@@ -157,14 +91,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tappedRecoverPassword(_ sender: Any) {
-        
         let viewController = UIStoryboard(name: "RecoverPassword", bundle: nil).instantiateViewController(withIdentifier: "RecoverPassword") as? RecoverPasswordViewController
         
         navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
     }
 }
-
-
 
 extension LoginViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -184,5 +115,15 @@ extension LoginViewController: UITextFieldDelegate {
         textField.layer.borderColor = UIColor.black.cgColor
         
         updateEnterButtonState()
+    }
+}
+
+extension LoginViewController: LoginViewModelDelegate {
+    func didError(message: String) {
+        showSimpleAlert(title: "Atenção", message: message, customTitle: "Ok")
+    }
+    
+    func didSuccess() {
+        self.navigationController?.pushViewController(TabBarController(), animated: true)
     }
 }

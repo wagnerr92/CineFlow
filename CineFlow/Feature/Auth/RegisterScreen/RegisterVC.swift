@@ -36,8 +36,11 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var eyesRepeatPasswordbutton: UIButton!
     @IBOutlet weak var returnButton: UIButton!
     
+    var viewModel: RegisterViewModel = .init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         ConfigElements()
     }
     
@@ -57,33 +60,14 @@ class RegisterVC: UIViewController {
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty,
               let repeatPassword = repeatPasswordTextField.text, password == repeatPassword else {
-            showAlert(message: "Por favor, preencha todos os campos corretamente.")
+            showSimpleAlert(title: "Atenção", message: "Por favor, preencha todos os campos corretamente.", customTitle: "OK")
             return
         }
-        
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                self.showAlert(message: "Erro ao criar a conta: \(error.localizedDescription)")
-            } else {
-                // Mensagem de sucesso com ação para voltar ao Login
-                let alert = UIAlertController(title: "Sucesso", message: "Conta criada com sucesso!", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                    // Voltar para a tela de login após o OK
-                    self.navigationController?.popViewController(animated: true)
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
+        viewModel.registerUser(email: email, password: password)
     }
     
     
     @IBAction func tappedReturnButton(_ sender: Any) {
-    }
-    
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
     func configTextField(textField: UITextField, delegate: UITextFieldDelegate, keyboard: UIKeyboardType){
@@ -253,37 +237,12 @@ extension RegisterVC: UITextFieldDelegate {
     }
 }
 
-extension UITextField {
-    
-    func validateName(updateAll: String) -> Bool {
-        let nameRegex = "[a-z0-9A-Z._!@#$&].{2,}$"
-        let validateRegex = NSPredicate (format: "SELF MATCHES %@", nameRegex)
-        return validateRegex.evaluate(with: updateAll)
-    }
-    func validateEmail() -> Bool {
-        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let validateRegex = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        return validateRegex.evaluate(with: self.text)
+extension RegisterVC: RegisterViewModelDelegate {
+    func didError(message: String) {
+        showSimpleAlert(title: "Atenção", message: message, customTitle: "OK")
     }
     
-    func validatePasswordCapitalLetter(updateAll: String) -> Bool {
-        let passwordRegex = ".*[A-Z]+.*"
-        let validateRegex = NSPredicate (format: "SELF MATCHES %@", passwordRegex)
-        return validateRegex.evaluate(with: updateAll)
-    }
-    func validatePasswordLowercaseletter(updateAll: String) -> Bool {
-        let passwordRegex = ".*[a-z]+.*"
-        let validateRegex = NSPredicate (format: "SELF MATCHES %@", passwordRegex)
-        return validateRegex.evaluate(with: updateAll)
-    }
-    func validatePasswordCharacters(updateAll: String) -> Bool {
-        let passwordRegex = ".{8,}"
-        let validateRegex = NSPredicate (format: "SELF MATCHES %@", passwordRegex)
-        return validateRegex.evaluate(with: updateAll)
-    }
-    func validatePasswordSpecialCharacters(updateAll: String) -> Bool {
-        let passwordRegex = ".*[!@#$%^&*()_+-=\\[\\]{};':\"\\\\|,.<>/?`~§±©®™].*"
-        let validateRegex = NSPredicate (format: "SELF MATCHES %@", passwordRegex)
-        return validateRegex.evaluate(with: updateAll)
+    func didSuccess() {
+        showSimpleAlert(title: "Sucesso", message: "Conta criada com sucesso!", customTitle: "OK")
     }
 }
