@@ -28,7 +28,10 @@ class PopulateCollectionViewCell: UICollectionViewCell {
     }
 
     public func setupCell(data: MovieSerieModel?) {
-        guard let imageURL = URL(string: data?.posterPath ?? "") else { return }
+        guard let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(data?.posterPath ?? "")") else {
+            print("URL inválida para \(data?.title ?? "desconhecido")")
+            return
+        }
         DispatchQueue.global().async {
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
             DispatchQueue.main.async {

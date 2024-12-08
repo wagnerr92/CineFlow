@@ -56,14 +56,14 @@ extension ItemDetailViewController:  UITableViewDelegate, UITableViewDataSource 
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ContentHeaderCell.reuseId, for: indexPath) as? ContentHeaderCell
-            viewModel.setList(list: Details(image: detailItem.image,
+            viewModel.setList(list: Details(image: "https://image.tmdb.org/t/p/w500\(String(describing: detailItem.image))",
                                             contentTitle: detailItem.contentTitle,
                                             time: detailItem.time,
                                             yearOfRelease: detailItem.yearOfRelease,
                                             formatImage: detailItem.formatImage,
                                             movieRatings: detailItem.movieRatings,
                                             pointsMovie: detailItem.pointsMovie))
-            cell?.setupCell(datails: viewModel.getList(indexPath: indexPath))
+            cell?.setupCell(details: viewModel.getList(indexPath: indexPath))
             cell?.delegate = self
            cell?.selectionStyle = .none
             return cell ?? UITableViewCell()

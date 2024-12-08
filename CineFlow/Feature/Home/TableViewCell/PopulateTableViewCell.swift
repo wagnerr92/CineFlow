@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PopulateTableViewCellDelegate: AnyObject {
-    func goToDetailbyPopulate(sinopse: String, title: String, cover: String)
+    func goToDetailbyPopulate(sinopse: String, title: String, cover: String, releaseYear: String)
     func getPopulateMovies(indexPath: IndexPath) -> MovieSerieModel
     func populateNumberOfItemsInSection(section: Int) -> Int
 }
@@ -47,17 +47,32 @@ extension PopulateTableViewCell {
 
 extension PopulateTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.delegate?.populateNumberOfItemsInSection(section: section) ?? 0
-    }
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return self.delegate?.populateNumberOfItemsInSection(section: section) ?? 0
+//    }
     
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopulateCollectionViewCell.reuseId, for: indexPath) as? PopulateCollectionViewCell
+//        if let cell = cell {
+//            cell.setupCell(data: self.delegate?.getPopulateMovies(indexPath: indexPath))
+//        }
+//        return cell ?? UICollectionViewCell()
+//    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let count = self.delegate?.populateNumberOfItemsInSection(section: section) ?? 0
+        return count
+    }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopulateCollectionViewCell.reuseId, for: indexPath) as? PopulateCollectionViewCell
-        if let cell = cell {
-            cell.setupCell(data: self.delegate?.getPopulateMovies(indexPath: indexPath))
+        if let movie = self.delegate?.getPopulateMovies(indexPath: indexPath) {
+            cell?.setupCell(data: movie)
+        } else {
+            print("Erro: Nenhum filme retornado para indexPath \(indexPath.row)")
         }
         return cell ?? UICollectionViewCell()
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return  CGSize(width: 100, height: 150)
@@ -65,8 +80,10 @@ extension PopulateTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let title = self.delegate?.getPopulateMovies(indexPath: indexPath).title ?? ""
-        let sinopse = self.delegate?.getPopulateMovies(indexPath: indexPath).sinopse ?? ""
-        let coverImage = self.delegate?.getPopulateMovies(indexPath: indexPath).coverImage ?? ""
-        self.delegate?.goToDetailbyPopulate(sinopse: sinopse, title: title, cover: coverImage)
+        let sinopse = self.delegate?.getPopulateMovies(indexPath: indexPath).overview ?? "" 
+        let coverImage = self.delegate?.getPopulateMovies(indexPath: indexPath).backdropPath ?? ""
+        let releaseYear = self.delegate?.getPopulateMovies(indexPath: indexPath).releaseYear ?? ""
+        self.delegate?.goToDetailbyPopulate(sinopse: sinopse, title: title, cover: coverImage, releaseYear: releaseYear)
     }
+
 }

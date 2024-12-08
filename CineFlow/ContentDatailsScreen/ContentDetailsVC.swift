@@ -52,7 +52,7 @@ extension ContentDetailsVC: UITableViewDataSource, UITableViewDelegate {
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ContentHeaderCell.identifier, for: indexPath) as? ContentHeaderCell
-            cell?.setupCell(datails: list[indexPath.row])
+            cell?.setupCell(details: list[indexPath.row])
             cell?.delegate = self
            cell?.selectionStyle = .none
             return cell ?? UITableViewCell()

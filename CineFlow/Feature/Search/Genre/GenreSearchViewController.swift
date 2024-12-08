@@ -12,6 +12,17 @@ class GenreSearchViewController: UIViewController {
     @IBOutlet weak var genresView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    // Dicionário para mapear nomes de gêneros aos IDs
+    private let genres: [String: Int] = [
+        "Ação": 28,
+        "Aventura": 12,
+        "Animação": 16,
+        "Comédia": 35,
+        "Terror": 27,
+        "Suspense": 53,
+        "Romance": 10749,
+        "Drama": 18
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +30,12 @@ class GenreSearchViewController: UIViewController {
         
         genresView.backgroundColor = CFColor.genresViewBackground
         searchBar.configureSearchBar()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
     }
-    
     
     @IBAction func tappedActionButton(_ sender: Any) {
         navigateToSearchResult(genre: "Ação")
@@ -51,6 +60,7 @@ class GenreSearchViewController: UIViewController {
     @IBAction func tappedThrillerButton(_ sender: Any) {
         navigateToSearchResult(genre: "Suspense")
     }
+    
     @IBAction func tappedRomanceButton(_ sender: Any) {
         navigateToSearchResult(genre: "Romance")
     }
@@ -60,10 +70,18 @@ class GenreSearchViewController: UIViewController {
     }
     
     private func navigateToSearchResult(genre: String) {
-        if let controller = UIStoryboard(name: "SearchResult", bundle: nil).instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController {
+        guard let genreId = genres[genre] else {
+            print("Erro: Gênero \(genre) não encontrado.")
+            return
+        }
+        
+        if let controller = UIStoryboard(name: "SearchResult", bundle: nil)
+            .instantiateViewController(withIdentifier: String(describing: SearchResultViewController.self)) as? SearchResultViewController {
+            
             controller.selectedGenre = genre
+            controller.selectedGenreId = genreId // Passa o ID do gênero
             navigationController?.pushViewController(controller, animated: true)
         }
     }
-    
 }
+

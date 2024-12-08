@@ -43,19 +43,40 @@ class ContentHeaderCell: UITableViewCell {
         delegate?.didtappedAddButton()
     }
     
-    func setupCell(datails: Details){
-        guard let imageURL = URL(string: datails.image ?? "") else { return }
+    func setupCell(details: Details) {
+        // Garantir que o valor de `details.image` seja desempacotado
+        guard let rawImagePath = details.image else {
+            backgroundImage.image = UIImage(named: "placeholder")
+            return
+        }
+        
+        let imagePath = rawImagePath.replacingOccurrences(of: "Optional(\"", with: "").replacingOccurrences(of: "\")", with: "")
+        
+        // Construir a URL para a imagem
+        guard let imageURL = URL(string: imagePath) else {
+            backgroundImage.image = UIImage(named: "placeholder") // Imagem padrão se a URL for inválida
+            return
+        }
+
+        // Carregar a imagem de forma assíncrona
         DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            DispatchQueue.main.async {
-                self.backgroundImage.image = UIImage(data: imageData)
+            if let imageData = try? Data(contentsOf: imageURL) {
+                DispatchQueue.main.async {
+                    self.backgroundImage.image = UIImage(data: imageData)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.backgroundImage.image = UIImage(named: "placeholder") // Placeholder se o carregamento falhar
+                }
             }
         }
-        nameLabel.text = datails.contentTitle
-        infoLabel.text = ("\(datails.time)        \(datails.movieRatings)        \(datails.yearOfRelease)        \(datails.formatImage)")
-        pointsLabel.text = datails.pointsMovie
+
+        // Configurar os outros elementos
+        nameLabel.text = details.contentTitle
+        infoLabel.text = "\(details.time)        \(details.movieRatings)        \(details.yearOfRelease)        \(details.formatImage)"
+        pointsLabel.text = details.pointsMovie
     }
-    
+
     func configElements(){
         backgroundImage.contentMode = .scaleAspectFill
         backgroundImage.clipsToBounds = true

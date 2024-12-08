@@ -12,18 +12,22 @@ class SearchResultViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var genreLabel: UILabel!
+    
     var viewModel: SearchResultViewModel = SearchResultViewModel()
     var selectedGenre: String?
+    var selectedGenreId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+        setupBindings()
+        fetchMovies()
         
         searchBar.configureSearchBar()
         
         if let genre = selectedGenre {
-                   genreLabel.text = "Resultado de gênero: \(genre)"
-               }
+            genreLabel.text = "Resultado de gênero: \(genre)"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +43,28 @@ class SearchResultViewController: UIViewController {
             SearchResultTableViewCell.nib(),
             forCellReuseIdentifier: SearchResultTableViewCell.identifier)
     }
+    
+    private func setupBindings() {
+        // Atualiza a tableView quando os dados forem carregados
+        viewModel.didUpdateMovies = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+        
+        viewModel.didFailWithError = { error in
+            print("Erro ao carregar filmes: \(error.localizedDescription)")
+        }
+    }
+    
+    private func fetchMovies() {
+        // Busca os filmes de acordo com o gênero selecionado
+        guard let genreId = selectedGenreId else {
+            print("Nenhum ID de gênero selecionado.")
+            return
+        }
+        viewModel.fetchMoviesByGenre(genreId: genreId)
+    }
 }
 
 extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource {
@@ -48,13 +74,16 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRowsInSection().count
+        return viewModel.numberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let searchResult = viewModel.getReleaseMoviesList(indexpath: indexPath)
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as? SearchResultTableViewCell
+        
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: SearchResultTableViewCell.identifier,
+            for: indexPath
+        ) as? SearchResultTableViewCell
         cell?.setupCell(searchResult: searchResult)
         
         return cell ?? UITableViewCell()
@@ -63,20 +92,24 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedMovie = viewModel.getReleaseMoviesList(indexpath: indexPath)
-                
-        navigationController?.pushViewController(ItemDetailViewController(sinopse: selectedMovie.sinopse,
-                                                                          detailItem: Details(image: selectedMovie.posterPath,
-                                                                                              contentTitle: selectedMovie.title,
-                                                                                              time: "1H 32MIN",
-                                                                                              yearOfRelease: "2023",
-                                                                                              formatImage: "4K UHD",
-                                                                                              movieRatings: "18+",
-                                                                                              pointsMovie: "3.4")), animated: true)
+        
+        navigationController?.pushViewController(
+            ItemDetailViewController(
+                sinopse: selectedMovie.overview,
+                detailItem: Details(
+                    image: selectedMovie.posterPath,
+                    contentTitle: selectedMovie.title,
+                    time: "1H 32MIN",
+                    yearOfRelease: selectedMovie.releaseYear,
+                    formatImage: "4K UHD",
+                    movieRatings: "18+",
+                    pointsMovie: String(format: "%.1f", selectedMovie.voteAverage)
+                )
+            ), animated: true
+        )
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
-        
     }
-    
 }

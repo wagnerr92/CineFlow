@@ -27,13 +27,36 @@ class HomeCollectionViewCell: UICollectionViewCell {
         coverImage.layer.borderColor = CFColor.white.cgColor
     }
 
+//    public func setupCell(data: MovieSerieModel?) {
+//        guard let imageURL = URL(string: data?.posterPath ?? "") else { return }
+//        DispatchQueue.global().async {
+//            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+//            DispatchQueue.main.async {
+//                self.coverImage.image = UIImage(data: imageData)
+//            }
+//        }
+//    }
     public func setupCell(data: MovieSerieModel?) {
-        guard let imageURL = URL(string: data?.posterPath ?? "") else { return }
+        guard let data = data else {
+            coverImage.image = UIImage(named: "placeholder") // Placeholder para imagens ausentes
+            return
+        }
+
+        // Construir a URL com o base URL e o posterPath
+        let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(data.posterPath)")
+
+        // Fazer o carregamento da imagem de forma assíncrona
         DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            DispatchQueue.main.async {
-                self.coverImage.image = UIImage(data: imageData)
+            if let imageURL = imageURL, let imageData = try? Data(contentsOf: imageURL) {
+                DispatchQueue.main.async {
+                    self.coverImage.image = UIImage(data: imageData)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.coverImage.image = UIImage(named: "placeholder")
+                }
             }
         }
     }
+
 }

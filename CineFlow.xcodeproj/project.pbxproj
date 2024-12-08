@@ -95,6 +95,7 @@
 		11BCEBDB2C9A7F620067D2CF /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCEBDA2C9A7F620067D2CF /* ChangePasswordViewController.swift */; };
 		11C3DF292C9BD77000126F7C /* GenreSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C3DF282C9BD77000126F7C /* GenreSearch.storyboard */; };
 		11C3DF2B2C9BDD0400126F7C /* GenreSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3DF2A2C9BDD0400126F7C /* GenreSearchViewController.swift */; };
+		11C7C67D2D01298B008B0041 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C7C67C2D012983008B0041 /* MovieService.swift */; };
 		11FC19D22CBC2CF700BF31BE /* UISearchBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC19D12CBC2CF700BF31BE /* UISearchBar+Extension.swift */; };
 		A008D8BA2C9C918500C339C9 /* MovieImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008D8A12C9C918500C339C9 /* MovieImagesCell.swift */; };
 		A008D8BB2C9C918500C339C9 /* MovieImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A008D8A22C9C918500C339C9 /* MovieImagesCell.xib */; };
@@ -189,6 +190,7 @@
 		11BCEBDA2C9A7F620067D2CF /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		11C3DF282C9BD77000126F7C /* GenreSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GenreSearch.storyboard; sourceTree = "<group>"; };
 		11C3DF2A2C9BDD0400126F7C /* GenreSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSearchViewController.swift; sourceTree = "<group>"; };
+		11C7C67C2D012983008B0041 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		11FC19D12CBC2CF700BF31BE /* UISearchBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extension.swift"; sourceTree = "<group>"; };
 		A008D8A12C9C918500C339C9 /* MovieImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieImagesCell.swift; sourceTree = "<group>"; };
 		A008D8A22C9C918500C339C9 /* MovieImagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieImagesCell.xib; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 		015E1ECE2C9BBCE500D06BD8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				11C7C67B2D01296F008B0041 /* Services */,
 				01F368592C9CD0EF00D5674F /* Model */,
 				01F368512C9CB75600D5674F /* CollectionViewCell */,
 				01F368502C9CB74600D5674F /* TableViewCell */,
@@ -572,6 +575,14 @@
 				11C3DF2A2C9BDD0400126F7C /* GenreSearchViewController.swift */,
 			);
 			path = Genre;
+			sourceTree = "<group>";
+		};
+		11C7C67B2D01296F008B0041 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				11C7C67C2D012983008B0041 /* MovieService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		11FC19D02CBC2CD800BF31BE /* SearchBar */ = {
@@ -841,6 +852,7 @@
 				017611C52C758D7C00CB2A08 /* CFColor.swift in Sources */,
 				015E1EC52C9BBC4100D06BD8 /* MenuTableViewCell.swift in Sources */,
 				A008D8C62C9C918500C339C9 /* ContentDetailsVC.swift in Sources */,
+				11C7C67D2D01298B008B0041 /* MovieService.swift in Sources */,
 				012EC2C22C78CE6C00A88353 /* DetailListViewController.swift in Sources */,
 				01B96D222CED7ED800D0C7A1 /* UITextField+Extension.swift in Sources */,
 				017611C32C758D6200CB2A08 /* UIColor+Extension.swift in Sources */,
